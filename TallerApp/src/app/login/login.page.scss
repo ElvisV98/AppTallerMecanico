@@ -1,28 +1,49 @@
-.inicio-sesion {
-    display: flex;
-    justify-content: space-between;
+.cont-formulario {
+    background-color: green;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     padding: 1rem;
 
 }
 
-.form-ingreso {
+.titulo-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+
+
+}
+
+.cuerpo-form {
     display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
     justify-content: center; //CENTRA ELEMENTOS
     flex-direction: column;
     width: 100%;
     color: red($color: #000000);
-    
+}
+
+.estilo-correo {
+
+}
+
+.estilo-pass {
+
+}
+
+.footer-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
 }
 
 ion-button {
     --background: red!important;
+    margin:0 20%;
   }
 
-.btn-login {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-
-}

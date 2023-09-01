@@ -4,29 +4,36 @@
 
 
 <ion-content [fullscreen]="true">
-<div class="inicio-sesion">
-  <h1>Iniciar Sesión</h1>
-  <h2>Logo</h2>
-</div>
-<div class="form-ingreso">
 
-  <ion-input
-  type="email"
-  label="Usuario"
-  labelPlacement="floating"
-  placeholder="Ingresa Usuario"
-></ion-input>
+<div class="cont-formulario">
 
-  <ion-input
-  type="password"
-  label="Contraseña"
-  labelPlacement="floating"
-></ion-input>
-</div>
+  <div class="titulo-form">
+    <h1>Iniciar Sesión</h1>
+    <h2>Logo</h2>
+  </div>
 
+  <div class="cuerpo-form">
 
-<div class="btn-login">
-  <ion-button [routerLink]="['/home']" >Ingresar</ion-button> 
+    <ion-input class="estilo-correo"
+      type="email"
+      label="Email"
+      labelPlacement="floating"
+      placeholder="Ingresa Usuario">
+    </ion-input>
+
+    <ion-input class="estilo-pass"
+      type="password"
+      label="Contraseña"
+      labelPlacement="floating">
+    </ion-input>
+  </div>
+
+  <div class="footer-form">
+    
+      <ion-button [routerLink]="['/home']" >Ingresar</ion-button>
+      <h5>Olvido la contraseña?</h5>
+  </div>
+
 </div>
 
 
