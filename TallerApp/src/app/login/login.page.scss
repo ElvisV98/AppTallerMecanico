@@ -1,0 +1,28 @@
+.inicio-sesion {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+.form-ingreso {
+    display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
+    justify-content: center; //CENTRA ELEMENTOS
+    flex-direction: column;
+    width: 100%;
+    color: red($color: #000000);
+    
+}
+
+ion-button {
+    --background: red!important;
+  }
+
+.btn-login {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+
+}
