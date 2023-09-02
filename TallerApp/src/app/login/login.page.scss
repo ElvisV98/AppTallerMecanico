@@ -1,3 +1,5 @@
+
+
 .cont-formulario {
     background-color: green;
     position: absolute;
@@ -14,8 +16,6 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-
-
 }
 
 .cuerpo-form {
@@ -36,14 +36,35 @@
 
 .footer-form {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    text-align: center;
     padding: 2rem 1rem 1rem;
 }
 
 ion-button {
     --background: red!important;
-    margin:0 20%;
+    display: block;
   }
 
+.fila-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+ion-checkbox {
+    --size: 32px;
+    --checkbox-background-checked: #6815ec;
+}
+  
+ion-checkbox::part(container) {
+    border-radius: 6px;
+    border: 2px solid #6815ec;
+}
+
+.checkbox-wrapper {
+    flex-direction: row-reverse;
+}

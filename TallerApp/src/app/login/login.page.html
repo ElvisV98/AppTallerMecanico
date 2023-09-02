@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  
+    <title>Hola</title>
 </ion-header>
 
 
@@ -26,13 +26,20 @@
       label="Contraseña"
       labelPlacement="floating">
     </ion-input>
+
   </div>
 
   <div class="footer-form">
     
-      <ion-button [routerLink]="['/home']" >Ingresar</ion-button>
-      <h5>Olvido la contraseña?</h5>
-  </div>
+    <div class="fila-form">
+      <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
+      <h6>Olvido la contraseña?</h6>
+    </div>
+    
+    <ion-button [routerLink]="['/home']" >Ingresar</ion-button>
+      
+    <h6>Registrarse</h6>
+    </div>
 
 </div>
 
