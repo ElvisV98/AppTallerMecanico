@@ -1,29 +1,47 @@
+<!-- Header -->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>  
-    <ion-title></ion-title>
+    <h3>Header</h3>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-
-  </ion-header>
+  
   <ion-button [routerLink]="['/login']">Go to login</ion-button>
-
-  
-
-  
-
-
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home">
+      <ion-icon name="play-circle"></ion-icon>
+      Home
+    </ion-tab-button>
+
+    <ion-tab-button tab="radio">
+      <ion-icon name="radio"></ion-icon>
+      Ventas
+    </ion-tab-button>
+
+    <ion-tab-button tab="library">
+      <ion-icon name="library"></ion-icon>
+      Reservas
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Calendario
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Usuarios
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Menu
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
