@@ -1,47 +1,31 @@
-<!-- Header -->
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <h3>Header</h3>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  <ion-button [routerLink]="['/login']">Go to login</ion-button>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="play-circle"></ion-icon>
+        Listen Now
+      </ion-tab-button>
+      <ion-tab-button tab="radio">
+        <ion-icon name="radio"></ion-icon>
+        Radio
+      </ion-tab-button>
+      <ion-tab-button tab="library">
+        <ion-icon name="library"></ion-icon>
+        Library
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        Search
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
 </ion-content>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-
-    <ion-tab-button tab="home">
-      <ion-icon name="play-circle"></ion-icon>
-      Home
-    </ion-tab-button>
-
-    <ion-tab-button tab="radio">
-      <ion-icon name="radio"></ion-icon>
-      Ventas
-    </ion-tab-button>
-
-    <ion-tab-button tab="library">
-      <ion-icon name="library"></ion-icon>
-      Reservas
-    </ion-tab-button>
-
-    <ion-tab-button tab="search">
-      <ion-icon name="search"></ion-icon>
-      Calendario
-    </ion-tab-button>
-
-    <ion-tab-button tab="search">
-      <ion-icon name="search"></ion-icon>
-      Usuarios
-    </ion-tab-button>
-
-    <ion-tab-button tab="search">
-      <ion-icon name="search"></ion-icon>
-      Menu
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
