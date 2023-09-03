@@ -1,7 +1,7 @@
 
 
 .cont-formulario {
-    background-color: green;
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -16,7 +16,9 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
+    color: black;
 }
+
 
 .cuerpo-form {
     display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
@@ -24,15 +26,14 @@
     flex-direction: column;
     width: 100%;
     color: red($color: #000000);
+    
 }
 
-.estilo-correo {
-
+.estilo-correo, .estilo-pass{
+color: red;
 }
 
-.estilo-pass {
 
-}
 
 .footer-form {
     display: flex;
@@ -44,18 +45,15 @@
 
 .boton-ingresar{
     --background: red!important;
-    display: block;
-
-
-    .boton-registrarse::part(native) {
-        background-color: red;
-        color: red;
-    }
-    
+    display: block;  
+     
 }
 
-ion-button.boton-recuperar-contraseña {
-    height: 2%;
+.boton-recuperar-contraseña {
+    position: relative;
+    top: -30px;
+    left: 15px;
+    font-size: 10px;
   }
 
 .fila-form {
@@ -67,13 +65,18 @@ ion-button.boton-recuperar-contraseña {
 }
 
 ion-checkbox {
-    --size: 32px;
-    --checkbox-background-checked: #6815ec;
+    --size: 20px;
+    --checkbox-background-checked: red;
+    color: black;
+    position: relative;
+    top: -30px;
+    right: 15px;
+    font-size: 15px;
 }
   
 ion-checkbox::part(container) {
     border-radius: 6px;
-    border: 2px solid #6815ec;
+    border: 2px solid gray;
 }
 
 .checkbox-wrapper {
@@ -81,6 +84,16 @@ ion-checkbox::part(container) {
 }
 
 .estilo-imagen{
-
     width: 40%;
 }
+
+.boton-registrarse{
+    font-size: 12px;
+    --color: gray;
+
+}
+
+.boton-recuperar-contraseña{
+    --color: gray;
+}
+
