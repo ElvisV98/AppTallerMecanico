@@ -8,8 +8,8 @@
 <div class="cont-formulario">
 
   <div class="titulo-form">
-    <h1>Iniciar Sesión</h1>
-    <h2>Logo</h2>
+    <h1>Iniciar Sesión </h1>
+    <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
   </div>
 
   <div class="cuerpo-form">
@@ -18,8 +18,10 @@
       type="email"
       label="Email"
       labelPlacement="floating"
+      position="floating"
       placeholder="Ingresa Usuario">
     </ion-input>
+    
 
     <ion-input class="estilo-pass"
       type="password"
@@ -33,13 +35,15 @@
     
     <div class="fila-form">
       <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
-      <h6>Olvido la contraseña?</h6>
+      <ion-button  class="boton-recuperar-contraseña"  fill="clear" >¿Olvido su contraseña?</ion-button>
     </div>
     
-    <ion-button [routerLink]="['/home']" >Ingresar</ion-button>
-      
-    <h6>Registrarse</h6>
+    <ion-button class="boton-ingresar" [routerLink]="['/home']" >Ingresar</ion-button>
+    <ion-button class="boton-registrarse"  fill="clear" >Registrarse </ion-button>
+    
     </div>
+
+    
 
 </div>
 

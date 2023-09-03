@@ -41,9 +41,21 @@
     padding: 2rem 1rem 1rem;
 }
 
-ion-button {
+
+.boton-ingresar{
     --background: red!important;
     display: block;
+
+
+    .boton-registrarse::part(native) {
+        background-color: red;
+        color: red;
+    }
+    
+}
+
+ion-button.boton-recuperar-contraseña {
+    height: 2%;
   }
 
 .fila-form {
@@ -53,7 +65,6 @@ ion-button {
     align-items: center;
     width: 100%;
 }
-
 
 ion-checkbox {
     --size: 32px;
@@ -67,4 +78,9 @@ ion-checkbox::part(container) {
 
 .checkbox-wrapper {
     flex-direction: row-reverse;
+}
+
+.estilo-imagen{
+
+    width: 40%;
 }
