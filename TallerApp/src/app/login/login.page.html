@@ -41,6 +41,8 @@
     <p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
     </div>
 
+    
+
   </div>
 
   <div class="footer-form">
@@ -53,10 +55,12 @@
     </div>
 
     <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
-    <ion-button class="boton-registrarse"  fill="clear" >Registrarse </ion-button>
-        
+    <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
+
     </div>
 </div>
+
+
 
 
 </ion-content>

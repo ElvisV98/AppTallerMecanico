@@ -42,7 +42,11 @@ export class LoginPage implements OnInit {
   validarCorreo() {
     const regexCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    if (regexCorreo.test(this.correo)) {
+    if (this.correo === '') {
+      // El campo de correo está vacío, oculta el mensaje de validación
+      this.mostrarMensajeCorreo = false;
+
+    }else if (regexCorreo.test(this.correo)) {
       // El correo electrónico es válido, ocultar el mensaje de validación
       this.mostrarMensajeCorreo = false;
       this.correoValido = true; // El correo es válido
