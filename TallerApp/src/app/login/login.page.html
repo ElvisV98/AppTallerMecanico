@@ -24,10 +24,16 @@
     
 
     <ion-input class="estilo-pass"
-      type="password"
-      label="Contraseña"
-      labelPlacement="floating">
-    </ion-input>
+    type="password"
+    label="Contraseña"
+    labelPlacement="floating"
+    [(ngModel)]="contrasena"
+    (input)="validarContrasena()"
+    maxlength="8">
+</ion-input>
+<div class="mensaje-validacion" [hidden]="!mostrarMensaje">
+La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.
+</div>
 
   </div>
 
@@ -40,7 +46,7 @@
 
     </div>
 
-    <ion-button class="boton-ingresar" [routerLink]="['/home']" >Ingresar</ion-button>
+    <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="mostrarMensaje">Ingresar</ion-button>
     <ion-button class="boton-registrarse"  fill="clear" >Registrarse </ion-button>
     
     </div>
