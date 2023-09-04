@@ -8,18 +8,23 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'recuperar-password',
     loadChildren: () => import('./recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
+  },  {
+    path: 'registrarse',
+    loadChildren: () => import('./registrarse/registrarse.module').then( m => m.RegistrarsePageModule)
   },
 
-
+  
+ 
 
 ];
 

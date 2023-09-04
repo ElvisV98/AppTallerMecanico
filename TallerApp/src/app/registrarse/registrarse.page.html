@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+
+  <div class="titulo-form">
+    <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="logo" class="estilo-imagen" >  
+    <h1>Crear una nueva cuenta</h1>
+  </div>
+
+  <div class="form-register">
+  <ion-input 
+  type="text"
+  fill="none" 
+  label="Nombre"
+  labelPlacement="floating"
+  class="mi-input">
+</ion-input>
+
+
+<ion-input 
+  type="text"
+  fill="none" 
+  label="Apellido"
+  labelPlacement="floating"
+  class="mi-input">
+</ion-input>
+
+<ion-input 
+  type="email"
+  fill="none" 
+  label="Correo electrónico"
+  labelPlacement="floating"
+  class="mi-input">
+</ion-input>
+
+<ion-input 
+  type="password"
+  fill="none" 
+  label="Contraseña"
+  labelPlacement="floating"
+  class="mi-input">
+</ion-input>
+  </div>
+ 
+  
+
+  
+
+
+
+ 
+
+  <ion-button class="boton-registrarse" [routerLink]="['/login']"   >Registrarse </ion-button>
+</ion-content>

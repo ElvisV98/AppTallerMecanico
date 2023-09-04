@@ -1,5 +1,4 @@
 
-
 .cont-formulario {
     background-color: white;
     position: absolute;
@@ -8,7 +7,6 @@
     transform: translate(-50%, -50%);
     width: 80%;
     padding: 1rem;
-
 }
 
 .titulo-form {
@@ -25,12 +23,11 @@
     justify-content: center; //CENTRA ELEMENTOS
     flex-direction: column;
     width: 100%;
-    color: red($color: #000000);
-    
+    color: red($color: #000000); 
+       
 }
 
-/* Estilo para el label */
-ion-label {
+.estilo-correo, .estilo-pass{
     color: red;
 }
   
@@ -96,9 +93,14 @@ ion-checkbox::part(container) {
 .boton-registrarse{
     font-size: 12px;
     --color: gray;
-
 }
 
 .boton-recuperar-contraseña{
     --color: gray;
 }
+
+p{
+    font-size: small;
+    color: gray;
+}
+
