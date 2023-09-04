@@ -29,9 +29,15 @@
     
 }
 
-.estilo-correo, .estilo-pass{
-color: red;
+/* Estilo para el label */
+ion-label {
+    color: red;
 }
+  
+  /* Estilo para el placeholder */
+ion-input::part(placeholder) {
+    color: green;
+  }
 
 
 
@@ -96,4 +102,3 @@ ion-checkbox::part(container) {
 .boton-recuperar-contraseña{
     --color: gray;
 }
-
