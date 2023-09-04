@@ -34,32 +34,18 @@
   <div class="footer-form">
     
     <div class="fila-form">
+
       <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
-      <ion-button  class="boton-recuperar-contraseña"  fill="clear" >¿Olvido su contraseña?</ion-button>
+      <ion-button  class="boton-recuperar-contraseña" [routerLink]="['/recuperar-password']" fill="clear" >¿Olvido su contraseña?</ion-button>
+
     </div>
-    
+
     <ion-button class="boton-ingresar" [routerLink]="['/home']" >Ingresar</ion-button>
     <ion-button class="boton-registrarse"  fill="clear" >Registrarse </ion-button>
     
     </div>
 
-    
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
- 
-     
-
 
 
 </ion-content>
