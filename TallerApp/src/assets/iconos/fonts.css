@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?6sjbzn');
+  src:  url('fonts/icomoon.eot?6sjbzn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6sjbzn') format('truetype'),
+    url('fonts/icomoon.woff?6sjbzn') format('woff'),
+    url('fonts/icomoon.svg?6sjbzn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-agregar-imagen:before {
+  content: "\e907";
+}
+.icon-filtrar:before {
+  content: "\e908";
+}
+.icon-config:before {
+  content: "\e992";
+}
+.icon-suma:before {
+  content: "\ea0a";
+}
+.icon-resta:before {
+  content: "\ea0b";
+}
+.icon-basurero:before {
+  content: "\e909";
+}
+.icon-punta-flecha:before {
+  content: "\e90a";
+}
+.icon-vulcanizacion:before {
+  content: "\e90e";
+}
+.icon-motor-2:before {
+  content: "\e90f";
+}
+.icon-home:before {
+  content: "\e901";
+}
+.icon-tienda:before {
+  content: "\e93a";
+}
+.icon-credit-card:before {
+  content: "\e93f";
+}
+.icon-reserva:before {
+  content: "\e944";
+}
+.icon-location:before {
+  content: "\e948";
+}
+.icon-usuarios:before {
+  content: "\e976";
+}
+.icon-candado:before {
+  content: "\e98f";
+}
+.icon-organizacion:before {
+  content: "\e9bc";
+}
+.icon-menu1:before {
+  content: "\e9bd";
+}
+.icon-salir:before {
+  content: "\ea0f";
+}
+.icon-mail:before {
+  content: "\ea86";
+}
+.icon-facebook:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-descargar:before {
+  content: "\e910";
+}
+.icon-imprimir:before {
+  content: "\e911";
+}
+.icon-buscar:before {
+  content: "\e912";
+}
+.icon-menu:before {
+  content: "\e913";
+}
+.icon-seccion:before {
+  content: "\e903";
+}
+.icon-producto-1:before {
+  content: "\e904";
+}
+.icon-producto-2:before {
+  content: "\e905";
+}
+.icon-calendario:before {
+  content: "\e906";
+}
+.icon-documento:before {
+  content: "\e90b";
+}
+.icon-motor:before {
+  content: "\e90c";
+}
+.icon-locales:before {
+  content: "\e90d";
+}
+.icon-grua:before {
+  content: "\e902";
+}
+.icon-auto-2:before {
+  content: "\e900";
+}

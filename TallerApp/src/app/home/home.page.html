@@ -1,48 +1,152 @@
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <!-- Bienvenido  -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bienvenido</ion-card-title>
+        <ion-card-subtitle>Bienvenido a nuestro sistema</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        ¿Que deseas hacer?
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Ventas -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ventas</ion-card-title>
+        <ion-card-subtitle>Visualiza los reportes de ventas</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        En esta seccion, podras modificar los productos, las secciones relacionadas con los productos, etc.
+      </ion-card-content>
+
+      <ion-button fill="clear">Ir a ventas</ion-button>
+    </ion-card>
+
+    <!-- Reserva -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Reservas</ion-card-title>
+        <ion-card-subtitle>Visualiza los espacios reservados</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion, podras visualizar los espacios disponibles en tu taller mecanico.
+      </ion-card-content>
+
+      <ion-button fill="clear">Ir a reservas</ion-button>
+    </ion-card>
+
+    <!-- Calendario -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Calendario</ion-card-title>
+        <ion-card-subtitle>Ve las actividades programadas para hoy</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion podras visualizar los eventos y reservas de este mes.
+      </ion-card-content>
+
+      <ion-button fill="clear">Ir a calendario</ion-button>
+    </ion-card>
+
+    <!-- Usuarios -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Usuarios</ion-card-title>
+        <ion-card-subtitle>Modifica los usuarios registrados</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion, podras visualizar los usuarios que se encuentran registrados en la aplicacion
+      </ion-card-content>
+
+      <ion-button fill="clear">Ir a usuarios</ion-button>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ventas</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ventas</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ventas</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
   
       <ion-tab-button tab="home">
-        <ion-icon name="play-circle"></ion-icon>
+        <ion-icon name="home-outline"></ion-icon>
         Home
       </ion-tab-button>
   
       <ion-tab-button tab="radio">
-        <ion-icon name="radio"></ion-icon>
+        <ion-icon name="cart-outline"></ion-icon>
         Ventas
       </ion-tab-button>
   
-      <ion-tab-button tab="library">
-        <ion-icon name="library"></ion-icon>
+      <ion-tab-button tab="home">
+        <ion-icon name="storefront-outline"></ion-icon>
         Reservas
       </ion-tab-button>
   
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
+      <ion-tab-button tab="library">
+        <ion-icon name="calendar-outline"></ion-icon>
         Calendario
       </ion-tab-button>
   
       <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
+        <ion-icon name="car-outline"></ion-icon>
         Usuarios
       </ion-tab-button>
   
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
+      <ion-tab-button>
+        <ion-icon name="menu-outline"></ion-icon>
         Menu
       </ion-tab-button>
   
     </ion-tab-bar>
-  </ion-tabs>
+  </ion-tabs>  
+
   
-  <ion-button [routerLink]="['/login']">Go to login</ion-button>
-</ion-content>
+
 
 
