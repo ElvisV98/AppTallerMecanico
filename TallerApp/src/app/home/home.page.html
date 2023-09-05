@@ -1,6 +1,5 @@
 
-
-  <ion-header>
+<ion-header>
     <ion-toolbar>
     </ion-toolbar>
   </ion-header>
@@ -30,7 +29,8 @@
         En esta seccion, podras modificar los productos, las secciones relacionadas con los productos, etc.
       </ion-card-content>
 
-      <ion-button fill="clear">Ir a ventas</ion-button>
+      <ion-button (click)="presentAlert('Ventas')" fill="clear">Ir a ventas</ion-button>
+      
     </ion-card>
 
     <!-- Reserva -->
@@ -44,7 +44,7 @@
         En esta seccion, podras visualizar los espacios disponibles en tu taller mecanico.
       </ion-card-content>
 
-      <ion-button fill="clear">Ir a reservas</ion-button>
+      <ion-button (click)="presentAlert('Reserva')" fill="clear">Ir a reserva</ion-button>
     </ion-card>
 
     <!-- Calendario -->
@@ -58,7 +58,7 @@
         En esta seccion podras visualizar los eventos y reservas de este mes.
       </ion-card-content>
 
-      <ion-button fill="clear">Ir a calendario</ion-button>
+      <ion-button (click)="presentAlert('Calendario')" fill="clear">Ir a calendario</ion-button>
     </ion-card>
 
     <!-- Usuarios -->
@@ -72,81 +72,15 @@
         En esta seccion, podras visualizar los usuarios que se encuentran registrados en la aplicacion
       </ion-card-content>
 
-      <ion-button fill="clear">Ir a usuarios</ion-button>
+      <ion-button (click)="presentAlert('Usuarios')" fill="clear">Ir a usuarios</ion-button>
     </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Ventas</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+
+    <ion-button id="modal-trigger">Present Modal</ion-button>
     
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Ventas</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
     
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Ventas</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-
   </ion-content>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
   
-      <ion-tab-button tab="home">
-        <ion-icon name="home-outline"></ion-icon>
-        Home
-      </ion-tab-button>
+    
   
-      <ion-tab-button tab="radio">
-        <ion-icon name="cart-outline"></ion-icon>
-        Ventas
-      </ion-tab-button>
-  
-      <ion-tab-button tab="home">
-        <ion-icon name="storefront-outline"></ion-icon>
-        Reservas
-      </ion-tab-button>
-  
-      <ion-tab-button tab="library">
-        <ion-icon name="calendar-outline"></ion-icon>
-        Calendario
-      </ion-tab-button>
-  
-      <ion-tab-button tab="search">
-        <ion-icon name="car-outline"></ion-icon>
-        Usuarios
-      </ion-tab-button>
-  
-      <ion-tab-button>
-        <ion-icon name="menu-outline"></ion-icon>
-        Menu
-      </ion-tab-button>
-  
-    </ion-tab-bar>
-  </ion-tabs>  
-
-  
-
-
-
