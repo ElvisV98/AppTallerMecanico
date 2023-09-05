@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -56,6 +57,11 @@ export class LoginPage implements OnInit {
       this.correoValido = false; // El correo no es válido
     }
   }
+
+
+
+
+  
 }
 
 
