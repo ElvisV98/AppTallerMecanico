@@ -72,15 +72,15 @@
         En esta seccion, podras visualizar los usuarios que se encuentran registrados en la aplicacion
       </ion-card-content>
 
-      <ion-button (click)="presentAlert('Usuarios')" fill="clear">Ir a usuarios</ion-button>
+      <ion-button id="open-modal" fill="clear">Ir a usuarios</ion-button>
     </ion-card>
 
-
-    <ion-button id="modal-trigger">Present Modal</ion-button>
-    
+    <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+      <ng-template>
+        <div class="block">Seccion no disponible</div>
+      </ng-template>
+    </ion-modal>
     
   </ion-content>
 
-  
-    
   
