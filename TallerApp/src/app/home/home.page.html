@@ -1,49 +1,86 @@
-<!-- Header -->
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <h3>Header</h3>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-  
-      <ion-tab-button tab="home">
-        <ion-icon name="play-circle"></ion-icon>
-        Home
-      </ion-tab-button>
-  
-      <ion-tab-button tab="radio">
-        <ion-icon name="radio"></ion-icon>
-        Ventas
-      </ion-tab-button>
-  
-      <ion-tab-button tab="library">
-        <ion-icon name="library"></ion-icon>
-        Reservas
-      </ion-tab-button>
-  
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Calendario
-      </ion-tab-button>
-  
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Usuarios
-      </ion-tab-button>
-  
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Menu
-      </ion-tab-button>
-  
-    </ion-tab-bar>
-  </ion-tabs>
-  
-  <ion-button [routerLink]="['/login']">Go to login</ion-button>
-</ion-content>
+  <ion-content>
 
+    <!-- Bienvenido  -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bienvenido</ion-card-title>
+        <ion-card-subtitle>Bienvenido a nuestro sistema</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        ¿Que deseas hacer?
+      </ion-card-content>
+    </ion-card>
 
+    <!-- Ventas -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ventas</ion-card-title>
+        <ion-card-subtitle>Visualiza los reportes de ventas</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        En esta seccion, podras modificar los productos, las secciones relacionadas con los productos, etc.
+      </ion-card-content>
+
+      <ion-button (click)="presentAlert('Ventas')" fill="clear">Ir a ventas</ion-button>
+      
+    </ion-card>
+
+    <!-- Reserva -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Reservas</ion-card-title>
+        <ion-card-subtitle>Visualiza los espacios reservados</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion, podras visualizar los espacios disponibles en tu taller mecanico.
+      </ion-card-content>
+
+      <ion-button (click)="presentAlert('Reserva')" fill="clear">Ir a reserva</ion-button>
+    </ion-card>
+
+    <!-- Calendario -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Calendario</ion-card-title>
+        <ion-card-subtitle>Ve las actividades programadas para hoy</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion podras visualizar los eventos y reservas de este mes.
+      </ion-card-content>
+
+      <ion-button (click)="presentAlert('Calendario')" fill="clear">Ir a calendario</ion-button>
+    </ion-card>
+
+    <!-- Usuarios -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Usuarios</ion-card-title>
+        <ion-card-subtitle>Modifica los usuarios registrados</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        En esta seccion, podras visualizar los usuarios que se encuentran registrados en la aplicacion
+      </ion-card-content>
+
+      <ion-button id="open-modal" fill="clear">Ir a usuarios</ion-button>
+    </ion-card>
+
+    <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+      <ng-template>
+        <div class="block">Seccion no disponible</div>
+      </ng-template>
+    </ion-modal>
+    
+  </ion-content>
+
+  
