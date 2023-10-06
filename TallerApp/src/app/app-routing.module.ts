@@ -22,17 +22,9 @@ const routes: Routes = [
   {
     path: 'registrarse',
     loadChildren: () => import('./registrarse/registrarse.module').then( m => m.RegistrarsePageModule)
-  },   {
-    path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
-  },  {
-    path: 'model',
-    loadChildren: () => import('./producto/model/model.module').then( m => m.ModelPageModule)
-  },
-  {
-    path: 'product-list',
-    loadChildren: () => import('./producto/product-add/product-all/product-detail/product-edit/product-list/product-list.module').then( m => m.ProductListPageModule)
-  },
+  },   
+  
+  
   {
     path: 'product-add',
     loadChildren: () => import('./producto/product-add/product-add.module').then( m => m.ProductAddPageModule)
@@ -52,6 +44,11 @@ const routes: Routes = [
   {
     path: 'product-list',
     loadChildren: () => import('./producto/product-list/product-list.module').then( m => m.ProductListPageModule)
+  },
+
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
 
