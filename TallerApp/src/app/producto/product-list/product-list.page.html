@@ -1,13 +1,50 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>product-list</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">product-list</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <ion-item>
+    <ion-label>
+      <font color="red">Utilizando un Accesador
+        <ion-button [routerLink]="['/product-add']">Agregar</ion-button>
+      </font>
+    </ion-label>
+  </ion-item>
+  <ion-list padding>
+    <!-- Recorremos el arreglo de registros utilizando item-->
+    <ion-item *ngFor="let p of productos">
+      <!-- Icono al inicio (start)-->
+      <ion-icon name="star" slot="start"></ion-icon>
+      <!-- Campos de item -->
+      <ion-label>{{p.precio | currency:' ':true:'1.0-2'}}</ion-label>
+      <!-- Icono al final -->
+      <ion-icon name="information-circle" slot="end"></ion-icon>
+      <!-- routerlink salta a otra pagina-->
+      <ion-button [routerLink]="['/product-edit/',p.id]">Edit</ion-button><br />
+      <!-- routerlink salta a otra pagina, pero con id del item-->
+      <ion-button [routerLink]="['/product-detail',p.id]">Detail</ion-button><br />
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+  <!--
+  <cdk-virtual-scroll-viewport cdkDropList itemSize="20" class="producto-lista" (cdkDropListDropped)="drop($event)">
+    <ion-item *cdkVirtualFor="let p of productos" class="producto-item" href="/product-detail/{{p.id}}" cdkDrag>
+      <ion-icon name="desktop" slot="start"></ion-icon>
+      {{p.nombre}}
+      <div class="item-note" slot="end">
+        {{p.precio | currency:' ':true:'1.0-2'}}
+      </div>
+    </ion-item>
+  </cdk-virtual-scroll-viewport>
+-->
