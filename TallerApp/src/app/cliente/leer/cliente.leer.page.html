@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>Leer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  
+  <ion-content>
+    <form>
+      <ion-item lines="full">
+        <ion-label position="floating">ID</ion-label>
+        <ion-input type="text" name="txId" [(ngModel)]="id" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" name="txNombres" [(ngModel)]="registro.nombres" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" name="txApellidos" [(ngModel)]="registro.apellidos" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="text" name="txCorreo" [(ngModel)]="registro.correo" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" name="txClave" [(ngModel)]="registro.clave" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button disabled={{buttonLeerDisabled}} (click)="leer()" color="danger" expand="block">Leer Registro</ion-button>
+          <ion-button (click)="grabarActualizarAutomatico()" color="danger" expand="block">Grabar Automático</ion-button>
+          <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block">Eliminar Registro</ion-button>
+          <br><br><br>
+          <ion-button disabled={{buttonCrearDisabled}} (click)="grabar()" color="danger" expand="block">Crear Registro</ion-button>
+          <ion-button disabled={{buttonActualizarDisabled}} (click)="actualizar()" color="danger" expand="block">Actualizar Registro</ion-button>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-label class="ion-text-wrap" position="floating" color="danger"> {{msgError}}</ion-label>
+      </ion-row>
+  
+    </form>
+  </ion-content>
+  
