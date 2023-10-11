@@ -47,33 +47,30 @@ const routes: Routes = [
   },
 
   {
-    path: 'cliente/listar',
-    loadChildren: () => import('./cliente/listar/cliente.listar.module').then(m => m.ClienteListarPageModule)
+    path: 'usuario-add',
+    loadChildren: () => import('./usuario/usuario-add/usuario-add.module').then( m => m.UsuarioAddPageModule)
   },
   {
-    path: 'cliente/agregar',
-    loadChildren: () => import('./cliente/agregar/cliente.agregar.module').then(m => m.ClienteAgregarPageModule)
+    path: 'usuario-all',
+    loadChildren: () => import('./usuario/usuario-all/usuario-all.module').then( m => m.UsuarioAllPageModule)
   },
   {
-    path: 'cliente/actualizar',
-    loadChildren: () => import('./cliente/actualizar/cliente.actualizar.module').then(m => m.ClienteActualizarPageModule)
+    path: 'usuario-detail',
+    loadChildren: () => import('./usuario/usuario-detail/usuario-detail.module').then( m => m.UsuarioDetailPageModule)
   },
   {
-    path: 'cliente/eliminar',
-    loadChildren: () => import('./cliente/eliminar/cliente.eliminar.module').then(m => m.ClienteEliminarPageModule)
+    path: 'usuario-edit',
+    loadChildren: () => import('./usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
+  },
+  {
+    path: 'usuario-list',
+    loadChildren: () => import('./usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
   },
 
-  {
-    path: 'cliente/leer',
-    loadChildren: () => import('./cliente/leer/cliente.leer.module').then(m => m.ClienteLeerPageModule)
-  },
-
-  
   {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-  
 
 ];
 
