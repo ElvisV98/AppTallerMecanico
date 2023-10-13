@@ -11,7 +11,7 @@ export class UsuarioAllPage implements OnInit {
   buttonLeerDisabled = false
   buttonActualizarDisabled = false
   buttonCrearDisabled = false
-  usuario: ClUsuario = { id: '', first_name: '', last_name: '', email: '', clave:0 };;
+  usuario: ClUsuario = { id: 'macarena@soco.cl', first_name: '', last_name: '', email: '', clave:0 };;
 
   constructor() { }
   ngOnInit() {  }

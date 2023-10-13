@@ -34,13 +34,25 @@ const routes: Routes = [
     loadChildren: () => import('./producto/product-all/product-all.module').then( m => m.ProductAllPageModule)
   },
   {
+    path: 'product-detail/:id',
+    loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+
+  {
     path: 'product-detail',
     loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
   },
+
+  {
+    path: 'product-edit/:id',
+    loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },
+
   {
     path: 'product-edit',
     loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
   },
+
   {
     path: 'product-list',
     loadChildren: () => import('./producto/product-list/product-list.module').then( m => m.ProductListPageModule)
@@ -55,13 +67,25 @@ const routes: Routes = [
     loadChildren: () => import('./usuario/usuario-all/usuario-all.module').then( m => m.UsuarioAllPageModule)
   },
   {
+    path: 'usuario-detail/:id',
+    loadChildren: () => import('./usuario/usuario-detail/usuario-detail.module').then( m => m.UsuarioDetailPageModule)
+  },
+
+  {
     path: 'usuario-detail',
     loadChildren: () => import('./usuario/usuario-detail/usuario-detail.module').then( m => m.UsuarioDetailPageModule)
   },
+
+  {
+    path: 'usuario-edit/:id',
+    loadChildren: () => import('./usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
+  },
+
   {
     path: 'usuario-edit',
     loadChildren: () => import('./usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
   },
+
   {
     path: 'usuario-list',
     loadChildren: () => import('./usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)

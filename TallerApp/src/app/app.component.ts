@@ -12,17 +12,15 @@ export class AppComponent {
 
     { title: 'Producto/Listar', url: 'product-list', icon: 'mail' },
     { title: 'Producto/Add', url: 'product-add', icon: 'mail' },
-    { title: 'Producto/Editar', url: 'product-edit', icon: 'mail' },
-    { title: 'Producto/Detail/1', url: 'product-detail/1', icon: 'mail' },
-    { title: 'Producto/Detail/10', url: 'product-detail/10', icon: 'mail' },
+    { title: 'Producto/Editar', url: 'product-edit', icon: 'mail' },   
     { title: 'Producto/Detail/', url: 'product-detail/', icon: 'mail' },
     { title: 'Producto/Crud', url: 'product-all', icon: 'mail' },
 
-    { title: 'Cliente/Listar', url: '/cliente/listar', icon: 'mail' },
-    { title: 'Cliente/agregar', url: '/cliente/agregar', icon: 'mail' },
-    { title: 'Cliente/Actualizar', url: '/cliente/actualizar', icon: 'mail' },
-    { title: 'Cliente/Eliminar', url: '/cliente/eliminar', icon: 'mail' },
-    { title: 'Cliente/Leer', url: '/cliente/leer', icon: 'mail' },
+    { title: 'usuario/Listar', url: 'usuario-list', icon: 'mail' },
+    { title: 'usuario/Add', url: 'usuario-add', icon: 'mail' },
+    { title: 'usuario/Editar', url: 'usuario-edit', icon: 'mail' },   
+    { title: 'usuario/Detail/', url: 'usuario-detail/', icon: 'mail' },
+    { title: 'usuario/Crud', url: 'usuario-all', icon: 'mail' },
 
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
