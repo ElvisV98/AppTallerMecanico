@@ -20,49 +20,66 @@
 
   <ion-item>
     <ion-label>id:</ion-label>
-    <!-- Objeto producto creado en TypeScript -->
-    <ion-label>{{usuario.id}}</ion-label>
+    <!-- ngModel, Objeto producto del TypeScript -->
+    <ion-input type="text" [(ngModel)]="usuario.id">
+    </ion-input>
   </ion-item>
+
+  
+<div class="mensaje-validacion" [hidden]="!mostrarMensajeId">
+  <p>Id no encontrada,complete los datos para crear un usuario.</p>
+</div>
 
 
   <ion-item>
-    <ion-label>first_name:</ion-label>
+    <ion-label>Nombre:</ion-label>
     <!-- ngModel, Objeto producto del TypeScript -->
     <ion-input type="text" [(ngModel)]="usuario.first_name">
     </ion-input>
   </ion-item>
 
+  <div class="error-message" *ngIf="mostrarMensajeNombre">El nombre es obligatorio para crear usuario.</div>
+
   <ion-item>
-    <ion-label>last_name:</ion-label>
+    <ion-label>Apellido:</ion-label>
     <ion-input type="text" [(ngModel)]="usuario.last_name">
     </ion-input>
   </ion-item>
 
+  <div class="error-message" *ngIf="mostrarMensajeApellido">El apellido es obligatorio para crear usuario.</div>
+
   <ion-item>
     <ion-label>email:</ion-label>
-    <ion-input type="email" [(ngModel)]="usuario.email">
+    <ion-input type="email" [(ngModel)]="usuario.email" (input)="autocompleteID()">
     </ion-input>
+    
   </ion-item>
+
+  <div class="error-message" *ngIf="mostrarMensajeEmail">El correo es obligatorio para crear usuario.</div>
 
   <ion-item>
     <ion-label>clave: </ion-label>
     <ion-input type="number" [(ngModel)]="usuario.clave">
     </ion-input>
   </ion-item>
+
+  <div class="error-message" *ngIf="mostrarMensajeClave">La clave es obligatorio para crear usuario.</div>
   <!--si existe producto.id entonces se despliega delete -->
   <ion-row>
     <ion-col>
       <ion-button disabled={{buttonLeerDisabled}} (click)="leer()" color="danger" expand="block">Leer
-        Registro</ion-button>
-      <ion-button (click)="grabarActualizarAutomatico()" color="danger" expand="block">Grabar Automático</ion-button>
-      <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon
-          name="trash"></ion-icon>Eliminar
-        Registro </ion-button>
-      <ion-button disabled={{buttonCrearDisabled}} (click)="grabar()" color="danger" expand="block">Crear
-        Registro<ion-icon name="md-checkmark" item-end></ion-icon></ion-button>
-      <ion-button disabled={{buttonActualizarDisabled}} (click)="actualizar()" color="danger" expand="block">Actualizar
-        Registro</ion-button>
+        Usuario</ion-button>
 
+      <ion-button disabled={{buttonCrearDisabled}} (click)="crear()" color="danger" expand="block">Crear
+        Usuario<ion-icon name="md-checkmark" item-end></ion-icon></ion-button>
+
+      <ion-button disabled={{buttonActualizarDisabled}} (click)="actualizar()" color="danger" expand="block">Actualizar
+          usuario</ion-button>
+  
+      <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon
+          name="trash"></ion-icon>Eliminar Registro </ion-button>
+
+     
 
       <ion-button *ngIf="usuario.id" ion-button full color="danger" item-end icon-right (click)="eliminar()">
         Remove
