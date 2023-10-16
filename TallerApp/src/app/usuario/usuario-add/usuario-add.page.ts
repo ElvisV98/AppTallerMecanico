@@ -3,7 +3,6 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { LoadingController, AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClUsuario } from '../model/ClUsuario';
-
 import { UsuarioServiceService } from '../usuario.service';
 
 
@@ -19,11 +18,11 @@ export class UsuarioAddPage implements OnInit {
   usuarioForm!: FormGroup;
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   usuario: ClUsuario = {
-    id: "macarena@soco.cl"
-    , first_name: 'Macarena Constanza'
-    , last_name: 'Piña'
-    , email: "macarena@soco.cl"
-    , clave:  123456
+    id: ""
+    , first_name: ''
+    , last_name: ''
+    , email: " "
+    , clave:  1
   };
 
   // Injectamos FormBuilder, el cual nos permitirá realizar validaciones                         
@@ -48,6 +47,9 @@ export class UsuarioAddPage implements OnInit {
   }
   // se ejecutará cuando presione el Submit
   async onFormSubmit(form: NgForm) {
+    
+    this.usuario.id = this.usuario.email;
+
     console.log("onFormSubmit del Product ADD")
 
     // Creamos un Loading Controller, Ojo no lo muestra

@@ -20,8 +20,8 @@ export class ProductAddPage implements OnInit {
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   producto: ClProducto = {
     id: 1511
-    , nombre: 'Harrys el Magnifico'
-    , descripcion: 'El Ingenioso'
+    , nombre: ''
+    , descripcion: ''
     , precio: 100
     , fecha: new Date()
     , cantidad: 200
@@ -49,6 +49,7 @@ export class ProductAddPage implements OnInit {
   }
   // se ejecutará cuando presione el Submit
   async onFormSubmit(form: NgForm) {
+    
     console.log("onFormSubmit del Product ADD")
 
     // Creamos un Loading Controller, Ojo no lo muestra

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Usuarios</ion-title>
+    <ion-title>Lista de Usuarios</ion-title>
     <ion-buttons slot="end">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 
   <ion-item>
     <ion-label>
-      <font color="red">Utilizando un Accesador
+      <font color="red">
         <ion-button [routerLink]="['/usuario-add']">Agregar</ion-button>
       </font>
     </ion-label>
@@ -26,16 +26,17 @@
       <!-- Icono al inicio (start)-->
       <ion-icon name="star" slot="start"></ion-icon>
       <!-- Campos de item -->
-      <ion-label>{{u.email}}</ion-label>
+      <ion-label>{{u.first_name}}</ion-label>
       <!-- Icono al final -->
       <ion-icon name="information-circle" slot="end"></ion-icon>
       <!-- routerlink salta a otra pagina-->
-      <ion-button [routerLink]="['/usuario-edit/',u.id]">Edit</ion-button><br />
+      <ion-button [routerLink]="['/usuario-edit',u.id]">Editar</ion-button><br />
       <!-- routerlink salta a otra pagina, pero con id del item-->
-      <ion-button [routerLink]="['/usuario-detail',u.id]">Detail</ion-button><br />
+      <ion-button [routerLink]="['/usuario-detail',u.id]">detalle</ion-button><br />
     </ion-item>
   </ion-list>
 
+ 
 </ion-content>
   <!--
   <cdk-virtual-scroll-viewport cdkDropList itemSize="20" class="producto-lista" (cdkDropListDropped)="drop($event)">
