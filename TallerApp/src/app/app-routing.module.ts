@@ -91,10 +91,17 @@ const routes: Routes = [
     loadChildren: () => import('./usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
   },
 
+ 
+  {
+    path: 'select-usuario',
+    loadChildren: () => import('./select-usuario/select-usuario.module').then( m => m.SelectUsuarioPageModule)
+  },
+
   {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
+
 
 ];
 
