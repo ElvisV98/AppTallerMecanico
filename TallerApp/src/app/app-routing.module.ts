@@ -98,9 +98,16 @@ const routes: Routes = [
   },
 
   {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
+
+  
 
 
 ];
