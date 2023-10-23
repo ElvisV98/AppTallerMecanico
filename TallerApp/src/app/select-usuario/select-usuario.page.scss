@@ -1,0 +1,26 @@
+ion-button{
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilo para la flecha de retroceso */
+ion-back-button {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde la izquierda */
+  }
+ 
+
+
+
+  ion-card-content{
+    padding-bottom: 800px;
+  }
+
+  p{
+    position: relative;
+    right: -50px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista de Usuarios</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>
+      <font color="red">
+        <ion-button [routerLink]="['/usuario-add']">Agregar</ion-button>
+      </font>
+    </ion-label>
+  </ion-item>
+  <ion-list padding>
+    <!-- Recorremos el arreglo de registros utilizando item-->
+    <ion-item *ngFor="let u of usuario">
+      <!-- Icono al inicio (start)-->
+      <ion-icon name="star" slot="start"></ion-icon>
+      <!-- Campos de item -->
+      <ion-label>{{u.first_name}}</ion-label>
+      <!-- Icono al final -->
+      <ion-icon name="information-circle" slot="end"></ion-icon>
+      <!-- routerlink salta a otra pagina-->
+      <ion-button [routerLink]="['/usuario-edit',u.id]">Editar</ion-button><br />
+      <!-- routerlink salta a otra pagina, pero con id del item-->
+      <ion-button [routerLink]="['/usuario-detail',u.id]">detalle</ion-button><br />
+    </ion-item>
+  </ion-list>
+
+  <ion-card color="warning">       
+    <ion-button class="boton-registrarse" [routerLink]="['/camara']"  fill="clear" >camara </ion-button>
+    </ion-card>
+
+
+ 
+</ion-content>
+  <!--
+  <cdk-virtual-scroll-viewport cdkDropList itemSize="20" class="producto-lista" (cdkDropListDropped)="drop($event)">
+    <ion-item *cdkVirtualFor="let p of productos" class="producto-item" href="/product-detail/{{p.id}}" cdkDrag>
+      <ion-icon name="desktop" slot="start"></ion-icon>
+      {{p.nombre}}
+      <div class="item-note" slot="end">
+        {{p.precio | currency:' ':true:'1.0-2'}}
+      </div>
+    </ion-item>
+  </cdk-virtual-scroll-viewport>
+-->

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">camara</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div id="container">
+  
+  <!--<img [src]="imageSource"style="width: 400px;"> -->
+
+  <img [src]="getPhoto()" style="width: 400px; /">
+  <ion-button (click)="takePicture()">Camara</ion-button>
+</div>
+</ion-content>

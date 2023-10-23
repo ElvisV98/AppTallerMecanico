@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Agregar Usuario </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="usuarioForm" (ngSubmit)="onFormSubmit(usuarioForm.value)">
+
+    <ion-item>
+      <ion-label position="floating">Primer nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.first_name" formControlName="usuario_first_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.last_name" formControlName="usuario_last_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">email</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.email" formControlName="usuario_email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">clave</ion-label>
+      <ion-input type="number" [(ngModel)]="usuario.clave" formControlName="usuario_clave"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" shape="round" color="primary" expand="block"
+      [disabled]="!usuarioForm.valid">Agregar</ion-button>
+  </form>
+</ion-content>
