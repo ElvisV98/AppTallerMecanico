@@ -6,61 +6,62 @@
 <ion-content [fullscreen]="true">
 
 <div class="cont-formulario">
+  <ion-card>
+    <div class="titulo-form">
+      <h1>Iniciar Sesión </h1>
+      <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
+    </div>
 
-  <div class="titulo-form">
-    <h1>Iniciar Sesión </h1>
-    <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
+    <div class="cuerpo-form">
+
+      <ion-input
+        type="email"
+        label="Email"
+        labelPlacement="floating"
+        position="floating"
+        [(ngModel)]="correo"
+        (input)="validarCorreo()"
+        placeholder="Ingresa correo">
+      </ion-input>
+      <div class="mensaje-validacion" [hidden]="!mostrarMensajeCorreo">
+      <p>Ingresa una dirección de correo electrónico válida.</p>
+      </div>
+
+      
+
+      <ion-input
+        type="password"
+        label="Contraseña"
+        labelPlacement="floating"
+        [(ngModel)]="contrasena"
+        (input)="validarContrasena()"
+        maxlength="8">
+      </ion-input>
+      <div class="mensaje-validacion" [hidden]="!mostrarMensaje">
+      <p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
+      </div>
+
+      
+
+    </div>
+
+    <div class="footer-form">
+      
+      <div class="fila-form">
+
+        <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
+        <ion-button  class="boton-recuperar-contraseña" [routerLink]="['/recuperar-password']" fill="clear" >¿Olvido su contraseña?</ion-button>
+
+      </div>
+
+      <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
+      <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
+
+      </div>
+    </ion-card>
+    <ion-button (click)="play()">Inicio</ion-button>
+    <ion-button (click)="stop()">Parar</ion-button>
   </div>
-
-  <div class="cuerpo-form">
-
-    <ion-input
-      type="email"
-      label="Email"
-      labelPlacement="floating"
-      position="floating"
-      [(ngModel)]="correo"
-      (input)="validarCorreo()"
-      placeholder="Ingresa correo">
-    </ion-input>
-    <div class="mensaje-validacion" [hidden]="!mostrarMensajeCorreo">
-    <p>Ingresa una dirección de correo electrónico válida.</p>
-    </div>
-
-    
-
-    <ion-input
-      type="password"
-      label="Contraseña"
-      labelPlacement="floating"
-      [(ngModel)]="contrasena"
-      (input)="validarContrasena()"
-      maxlength="8">
-    </ion-input>
-    <div class="mensaje-validacion" [hidden]="!mostrarMensaje">
-    <p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
-    </div>
-
-    
-
-  </div>
-
-  <div class="footer-form">
-    
-    <div class="fila-form">
-
-      <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
-      <ion-button  class="boton-recuperar-contraseña" [routerLink]="['/recuperar-password']" fill="clear" >¿Olvido su contraseña?</ion-button>
-
-    </div>
-
-    <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
-    <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
-
-    </div>
-</div>
-
-
 
 </ion-content>
 
