@@ -44,7 +44,15 @@ export class ProductDetailPage implements OnInit {
     const loading = await this.loadingController.create({ message: 'Loading...' });
     // Mostramos el Wait
     await loading.present();
-    await this.restApi.getProduct(this.route.snapshot.paramMap.get('id')!)
+
+      // Obtenemos el valor de 'id' desde paramMap
+  const idParam = this.route.snapshot.paramMap.get('id');
+
+   // Verificamos que 'idParam' no sea nulo antes de convertirlo en número
+   if (idParam) {
+    const productId = +idParam;
+
+    await this.restApi.getProduct(productId)
       .subscribe({
         next: (res) => {
           console.log("Data *****************");
@@ -60,7 +68,11 @@ export class ProductDetailPage implements OnInit {
           loading.dismiss(); //Elimina la espera
         }
       })
+  }else {
+    console.error("ID es nulo o no válido");
+    loading.dismiss(); // Elimina la espera en caso de un ID nulo
   }
+}
 
   // El Html invoca el método delete
   async delete(id: number) {

@@ -151,9 +151,4 @@ autocompleteID() {
   }
   
 
-
-
-  grabar() { }
-
-  grabarActualizarAutomatico() { }
 }

@@ -17,19 +17,27 @@
       <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="producto.nombre" formControlName="prod_name"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Precio</ion-label>
       <ion-input type="number" [(ngModel)]="producto.precio" formControlName="prod_price"></ion-input>
     </ion-item>
+
+ 
+
     <ion-item>
       <ion-label position="floating">Descripción</ion-label>
       <ion-textarea [(ngModel)]="producto.descripcion" formControlName="prod_desc"></ion-textarea>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Cantidad</ion-label>
       <ion-input type="number" [(ngModel)]="producto.cantidad" formControlName="prod_cantidad"></ion-input>
     </ion-item>
+
     <ion-button type="submit" shape="round" color="primary" expand="block"
       [disabled]="!productForm.valid">Submit</ion-button>
   </form>
 </ion-content>
+
+

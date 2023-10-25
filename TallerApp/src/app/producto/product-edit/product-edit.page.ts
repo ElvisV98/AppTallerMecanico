@@ -76,7 +76,7 @@ export class ProductEditPage implements OnInit {
       // Muestra Wait
       await loading.present();
       // Obtiene el Observable
-      await this.restApi.getProduct(id + "")
+      await this.restApi.getProduct(id)
         .subscribe({
           next: (data) => {
             console.log("getProductID data****");

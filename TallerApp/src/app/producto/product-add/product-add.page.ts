@@ -3,7 +3,6 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { LoadingController, AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClProducto } from '../model/ClProducto';
-
 import { ProductServiceService } from '../product-service.service';
 
 
@@ -19,12 +18,12 @@ export class ProductAddPage implements OnInit {
   productForm!: FormGroup;
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   producto: ClProducto = {
-    id: 1511
+    id: 0
     , nombre: ''
     , descripcion: ''
-    , precio: 100
+    , precio: 0
     , fecha: new Date()
-    , cantidad: 200
+    , cantidad: 1
   };
 
   // Injectamos FormBuilder, el cual nos permitirá realizar validaciones                         

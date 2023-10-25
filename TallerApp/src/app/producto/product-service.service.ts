@@ -52,7 +52,7 @@ export class ProductServiceService {
 
 
   //  Obtener un Producto
-  getProduct(id: String): Observable<ClProducto> {
+  getProduct(id: number): Observable<ClProducto> {
     //const url = '${apiUrl}/${id}';
     //return this.http.get<Producto>(url).pipe(
     console.log("getProduct ID:" + id);
@@ -80,6 +80,17 @@ export class ProductServiceService {
         catchError(this.handleError<any>('updateProduct'))
       );
   }
+
+  getProductByName(nombre: string): Observable<ClProducto> {
+    const url = `${apiUrl}?nombre=${nombre}`;
+    return this.http.get<ClProducto[]>(url).pipe(
+      map((productos) => productos[0]), // Obtén el primer producto (asumiendo que el nombre es único)
+      tap(_ => console.log('fetched product by name')),
+      catchError(this.handleError<ClProducto>('getProductByName'))
+    );
+  }
+  
+  
 
 
 }
