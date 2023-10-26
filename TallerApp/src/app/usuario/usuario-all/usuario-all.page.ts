@@ -149,6 +149,16 @@ autocompleteID() {
       this.msgError = "No puedes crear un usuario con una ID existente. Use una ID diferente.";
     }
   }
+
+  limpiarDatos() {
+    // Restablece los campos del producto a sus valores iniciales o valores vacíos
+    this.usuario = {id: '', first_name: '', last_name: '', email: '', clave: 0  };
+    this.buttonCrearDisabled = false;
+    this.buttonActualizarDisabled = true;
+    this.buttonEliminarDisabled = true;
+    this.msgError = ''; // Limpia el mensaje de error si hubiera alguno
+  }
+  
   
 
 }

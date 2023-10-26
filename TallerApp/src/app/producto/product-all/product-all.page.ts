@@ -29,6 +29,8 @@ mostrarMensajeCantidad: boolean = false;
 
 
   public id: string = '';
+
+
   leer() {
     this.mostrarMensajeNombre = false; // Reinicia el estado del mensaje de validación
   
@@ -54,6 +56,8 @@ mostrarMensajeCantidad: boolean = false;
       this.msgError = "Nombre de producto no válido";
     }
   }
+
+  
   
   eliminar() {
     if (this.producto.id) {
@@ -140,6 +144,16 @@ mostrarMensajeCantidad: boolean = false;
       this.msgError = "No puedes crear un usuario con una ID existente. Use una ID diferente.";
     }
   }
+
+  limpiarDatos() {
+    // Restablece los campos del producto a sus valores iniciales o valores vacíos
+    this.producto = { id: 0, nombre: '', descripcion: '', precio: 0, fecha: new Date(), cantidad: 0 };
+    this.buttonCrearDisabled = false;
+    this.buttonActualizarDisabled = true;
+    this.buttonEliminarDisabled = true;
+    this.msgError = ''; // Limpia el mensaje de error si hubiera alguno
+  }
+  
   
 
 }

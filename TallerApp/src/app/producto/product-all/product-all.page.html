@@ -77,10 +77,9 @@
       <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon name="trash"></ion-icon>Eliminar Registro </ion-button>
 
    
-      <ion-button *ngIf="producto.id" ion-button full color="danger" item-end icon-right (click)="eliminar()">
+      <ion-button *ngIf="producto.id" ion-button full color="danger" item-end icon-right (click)="limpiarDatos()">
         LIMPIAR
         <ion-icon name="trash"></ion-icon>
-        <!-- deleteProducto por medio del ID del producto-->
       </ion-button>
     </ion-col>
 
