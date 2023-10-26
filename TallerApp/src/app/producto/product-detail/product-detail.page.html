@@ -14,24 +14,23 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{producto.nombre}}</ion-card-title>
+      <ion-card-title>{{producto.nombreprod}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
+
       <ion-item>
         <p>Precio : </p>
         <p>{{producto.precio | currency}}</p>
       </ion-item>
-      <ion-item>
-        <p>Descripción : </p>
-        <p>{{producto.descripcion}}</p>
-      </ion-item>
+
       <ion-item>
         <p>Cantidad : </p>
         <p>{{producto.cantidad |currency:' ':true:'1.0-2'}}</p>
       </ion-item>
-      <ion-button type="button" shape="round" color="primary" expand="block" href="/product-edit/{{producto.id}}">Editar</ion-button>
-      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(producto.id)">Eliminar</ion-button>
+
+      <ion-button type="button" shape="round" color="primary" expand="block" href="/product-edit/{{producto.idProducto}}">Editar</ion-button>
+      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(producto.idProducto)">Eliminar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

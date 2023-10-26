@@ -81,11 +81,10 @@
 
      
 
-      <ion-button *ngIf="usuario.id" ion-button full color="danger" item-end icon-right (click)="eliminar()">
-        Limpiar
-        <ion-icon name="trash"></ion-icon>
-        <!-- deleteProducto por medio del ID del producto-->
-      </ion-button>
+          <ion-button *ngIf="usuario.id" ion-button full color="danger" item-end icon-right (click)="limpiarDatos()">
+            LIMPIAR
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
     </ion-col>
 
   </ion-row>

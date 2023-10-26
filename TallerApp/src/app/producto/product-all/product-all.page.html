@@ -12,57 +12,65 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mostrar todo</ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+  <ion-title size="large">mostrar todo</ion-title>
+  </ion-toolbar>
   </ion-header>
 
   <ion-item>
-    <ion-label>ID:</ion-label>
-    <!-- Objeto producto creado en TypeScript -->
-    <ion-label>{{producto.id}}</ion-label>
+  <ion-label>ID:</ion-label>
+  <!-- Objeto producto creado en TypeScript -->
+  <ion-input type="text" [(ngModel)]="producto.idProducto">
+  </ion-input>
   </ion-item>
 
+  <div class="mensaje-validacion" [hidden]="!mostrarMensajeId">
+  <p>Id no encontrada,complete los datos para crear un usuario.</p>
+  </div>
+
   <ion-item>
-    <ion-label>Nombre:</ion-label>
-    <!-- ngModel, Objeto producto del TypeScript -->
-    <ion-input type="text" [(ngModel)]="producto.nombre">
-    </ion-input>
+  <ion-label>Nombre:</ion-label>
+  <!-- ngModel, Objeto producto del TypeScript -->
+  <ion-input type="text" [(ngModel)]="producto.nombreprod">
+  </ion-input>
   </ion-item>
+
+  <div class="error-message" *ngIf="mostrarMensajeNombre">El nombre es obligatorio para crear producto.</div>
+
   <ion-item>
-    <ion-label>Descripción:</ion-label>
-    <ion-input type="text" [(ngModel)]="producto.descripcion">
-    </ion-input>
+  <ion-label>Precio:</ion-label>
+  <ion-input type="number" [(ngModel)]="producto.precio">
+  </ion-input>
   </ion-item>
+
+  <div class="error-message" *ngIf="mostrarMensajePrecio">El precio es obligatorio para crear producto.</div>
+
+
   <ion-item>
-    <ion-label>Precio:</ion-label>
-    <ion-input type="number" [(ngModel)]="producto.precio">
-    </ion-input>
+  <ion-label>Cantidad: </ion-label>
+  <ion-input type="number" [(ngModel)]="producto.cantidad">
+  </ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Cantidad: </ion-label>
-    <ion-input type="number" [(ngModel)]="producto.cantidad">
-    </ion-input>
-  </ion-item>
+
+  <div class="error-message" *ngIf="mostrarMensajeCantidad">La cantidad es obligatorio para crear producto.</div>
+  
+
+
   <!--si existe producto.id entonces se despliega delete -->
   <ion-row>
     <ion-col>
-      <ion-button disabled={{buttonLeerDisabled}} (click)="leer()" color="danger" expand="block">Leer
-        Registro</ion-button>
-      <ion-button (click)="grabarActualizarAutomatico()" color="danger" expand="block">Grabar Automático</ion-button>
-      <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon
-          name="trash"></ion-icon>Eliminar
-        Registro </ion-button>
-      <ion-button disabled={{buttonCrearDisabled}} (click)="grabar()" color="danger" expand="block">Crear
-        Registro<ion-icon name="md-checkmark" item-end></ion-icon></ion-button>
-      <ion-button disabled={{buttonActualizarDisabled}} (click)="actualizar()" color="danger" expand="block">Actualizar
-        Registro</ion-button>
+      <ion-button disabled={{buttonLeerDisabled}} (click)="leer()" color="danger" expand="block">Leer Registro</ion-button>
 
+      <ion-button disabled={{buttonCrearDisabled}} (click)="crear()" color="danger" expand="block">Crear Registro<ion-icon name="md-checkmark" item-end></ion-icon></ion-button>
 
-      <ion-button *ngIf="producto.id" ion-button full color="danger" item-end icon-right (click)="eliminar()">
-        Remove
+      <ion-button disabled={{buttonActualizarDisabled}} (click)="actualizar()" color="danger" expand="block">Actualizar Registro</ion-button>
+
+      <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon name="trash"></ion-icon>Eliminar Registro </ion-button>
+
+   
+      <ion-button *ngIf="producto.idProducto" ion-button full color="danger" item-end icon-right (click)="limpiarDatos()">
+        LIMPIAR
         <ion-icon name="trash"></ion-icon>
-        <!-- deleteProducto por medio del ID del producto-->
       </ion-button>
     </ion-col>
 

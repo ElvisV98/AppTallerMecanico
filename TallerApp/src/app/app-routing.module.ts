@@ -34,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./producto/product-all/product-all.module').then( m => m.ProductAllPageModule)
   },
   {
-    path: 'product-detail/:id',
+    path: 'product-detail/:idProducto',
     loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
   },
 
@@ -44,7 +44,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'product-edit/:id',
+    path: 'product-edit/:idProducto',
     loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
   },
 
@@ -112,11 +112,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-
-
-
-  
-
+ 
 
 ];
 
