@@ -26,13 +26,13 @@
       <!-- Icono al inicio (start)-->
       <ion-icon name="star" slot="start"></ion-icon>
       <!-- Campos de item -->
-      <ion-label>{{p.nombre}}</ion-label>
+      <ion-label>{{p.nombreprod}}</ion-label>
       <!-- Icono al final -->
       <ion-icon name="information-circle" slot="end"></ion-icon>
       <!-- routerlink salta a otra pagina-->
-      <ion-button [routerLink]="['/product-edit/',p.id]">editar</ion-button><br />
+      <ion-button [routerLink]="['/product-edit/',p.idProducto]">editar</ion-button><br />
       <!-- routerlink salta a otra pagina, pero con id del item-->
-      <ion-button [routerLink]="['/product-detail',p.id]">detalle</ion-button><br />
+      <ion-button [routerLink]="['/product-detail',p.idProducto]">detalle</ion-button><br />
     </ion-item>
   </ion-list>
 

@@ -20,7 +20,7 @@
   <ion-item>
   <ion-label>ID:</ion-label>
   <!-- Objeto producto creado en TypeScript -->
-  <ion-input type="text" [(ngModel)]="producto.id">
+  <ion-input type="text" [(ngModel)]="producto.idProducto">
   </ion-input>
   </ion-item>
 
@@ -31,20 +31,11 @@
   <ion-item>
   <ion-label>Nombre:</ion-label>
   <!-- ngModel, Objeto producto del TypeScript -->
-  <ion-input type="text" [(ngModel)]="producto.nombre">
+  <ion-input type="text" [(ngModel)]="producto.nombreprod">
   </ion-input>
   </ion-item>
 
   <div class="error-message" *ngIf="mostrarMensajeNombre">El nombre es obligatorio para crear producto.</div>
-
-  <ion-item>
-  <ion-label>Descripción:</ion-label>
-  <ion-input type="text" [(ngModel)]="producto.descripcion">
-  </ion-input>
-  </ion-item>
-
-  <div class="error-message" *ngIf="mostrarMensajeDescripcion">La descripción es obligatorio para crear producto.</div>
-
 
   <ion-item>
   <ion-label>Precio:</ion-label>
@@ -77,7 +68,7 @@
       <ion-button disabled={{buttonEliminarDisabled}} (click)="eliminar()" color="danger" expand="block"><ion-icon name="trash"></ion-icon>Eliminar Registro </ion-button>
 
    
-      <ion-button *ngIf="producto.id" ion-button full color="danger" item-end icon-right (click)="limpiarDatos()">
+      <ion-button *ngIf="producto.idProducto" ion-button full color="danger" item-end icon-right (click)="limpiarDatos()">
         LIMPIAR
         <ion-icon name="trash"></ion-icon>
       </ion-button>
