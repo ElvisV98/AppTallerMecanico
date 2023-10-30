@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 // Importamos Librerías
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -35,6 +36,7 @@ export class ProductListPage implements OnInit {
     });
     // Muestra el Wait
     await loading.present();
+    
     console.log("Entrando :");
     // Obtiene el Observable del servicio
     await this.restApi.getProducts()

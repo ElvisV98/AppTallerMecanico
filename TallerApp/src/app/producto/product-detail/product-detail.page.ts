@@ -20,20 +20,7 @@ export class ProductDetailPage implements OnInit {
     , nombreprod: ''
     , precio: 0
     , cantidad: 1
-    ,fechaNacimiento: new Date()
-    ,rut: null
-    ,dv: ""
-    ,enfermedad: ""
-    ,fonocontacto: 0
-    ,categoria: ""
-    ,editorial: ""
-    ,raza: ""
-    ,edad: 0
-    ,altura: 0
-    ,hrini: ""
-    ,hrfin: ""
-    ,direccion: ""
-    ,fCreacion: new Date()
+
   };
 
   // Injectamos Librerías a utilizar

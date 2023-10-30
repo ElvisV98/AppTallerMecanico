@@ -18,25 +18,12 @@ export class ProductAddPage implements OnInit {
   productForm!: FormGroup;
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   producto: ClProducto = {
-    idProducto: 1
-    ,codigo:"09-G13"
+    idProducto: 0
+    ,codigo:'09-G13'
     , nombreprod: ''
     , precio: 0
-    , cantidad: 1
-    ,fechaNacimiento: new Date()
-    ,rut: null
-    ,dv: ""
-    ,enfermedad: ""
-    ,fonocontacto: 0
-    ,categoria: ""
-    ,editorial: ""
-    ,raza: ""
-    ,edad: 0
-    ,altura: 0
-    ,hrini: ""
-    ,hrfin: ""
-    ,direccion: ""
-    ,fCreacion: new Date()
+    , cantidad: 0
+
   };
 
   // Injectamos FormBuilder, el cual nos permitirá realizar validaciones                         

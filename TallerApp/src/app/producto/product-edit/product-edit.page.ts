@@ -17,7 +17,7 @@ export class ProductEditPage implements OnInit {
   // FormGroup para validaciones
   productForm!: FormGroup;
   // Esquema a utilizar en el Html
-  producto: ClProducto = { idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento: new Date(),rut:null,dv:"",enfermedad:"",fonocontacto: 0, categoria: "",editorial:"",raza:"",edad:0,altura:0,hrini:"",hrfin:"",direccion:"",fCreacion:new Date() };
+  producto: ClProducto = {idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0 };
   id: any = '';
   //prod_name: string = '';
   //prod_desc: string = '';
