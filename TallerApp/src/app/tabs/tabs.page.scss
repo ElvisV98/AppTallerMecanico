@@ -1,0 +1,12 @@
+/* Cambiar el color del icono cuando se selecciona el botón 'home' */
+ion-tab-button.tab-selected[tab="home"] ion-icon,
+ion-tab-button.tab-selected[tab="productos"] ion-icon,
+ion-tab-button.tab-selected[tab="reserva"] ion-icon,
+ion-tab-button.tab-selected[tab="calendario"] ion-icon,
+ion-tab-button.tab-selected[tab="usuarios"] ion-icon,
+ion-tab-button.tab-selected[tab="search"] ion-icon{
+    color: rgb(255, 0, 0); /* Cambia el color a verde o el color que desees */
+  }
+  
+  /* Agrega más reglas para otros botones si es necesario */
+  

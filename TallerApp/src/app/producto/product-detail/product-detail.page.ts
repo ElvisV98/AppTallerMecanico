@@ -15,26 +15,27 @@ import { ProductServiceService } from '../product-service.service';
 export class ProductDetailPage implements OnInit {
   // Creamos registro a utilizar en el Html
   producto: ClProducto = {
-    idProducto: 1
-    ,codigo:"09-G13"
+    idProducto: 0
+    ,codigo:'09-G13'
     , nombreprod: ''
-    , precio: 0
+    , precio: 1
     , cantidad: 1
-    ,fechaNacimiento: new Date()
-    ,rut: null
-    ,dv: ""
-    ,enfermedad: ""
+    ,fechaNacimiento: ''
+    ,rut: ''
+    ,dv: '0'
+    ,enfermedad: ''
     ,fonocontacto: 0
-    ,categoria: ""
-    ,editorial: ""
-    ,raza: ""
+    ,categoria: '0'
+    ,editorial: '0'
+    ,raza: '0'
     ,edad: 0
     ,altura: 0
-    ,hrini: ""
-    ,hrfin: ""
-    ,direccion: ""
-    ,fCreacion: new Date()
-  };
+    ,hrini: '0'
+    ,hrfin: '0'
+    ,direccion: '0'
+    ,fCreacion: ''
+
+  };
 
   // Injectamos Librerías a utilizar
   constructor(

@@ -37,15 +37,13 @@
 
 
 export class ClProducto {
-  // si no Inicializo los valores, da Error
-  // Por eso es el constructor por obligación
   idProducto: number;
-  codigo:string;
+  codigo: string;
   nombreprod: string;
   precio: number;
   cantidad: number;
-  fechaNacimiento: Date;
-  rut: null;
+  fechaNacimiento: string;
+  rut: string | null;
   dv: string;
   enfermedad: string;
   fonocontacto: number;
@@ -57,7 +55,8 @@ export class ClProducto {
   hrini: string;
   hrfin: string;
   direccion: string;
-  fCreacion: Date;
+  fCreacion: string; 
+
   
   
   // si no Inicializo los valores, da Error
@@ -71,16 +70,15 @@ export class ClProducto {
         this.rut = obj && obj.rut || null
         this.dv = obj && obj.dv || null
         this.enfermedad = obj && obj.enfermedad || null
-        this.fonocontacto = obj && obj.fonocontacto || null
-        this.categoria = obj && obj.categoria || null
-        this.editorial = obj && obj.editorial || null
-        this.raza = obj && obj.raza || null
-        this.edad = obj && obj.edad || null
-        this.altura = obj && obj.altura || null
-        this.hrini = obj && obj.hrini || null
-        this.hrfin = obj && obj.hrfin || null
-        this.direccion = obj && obj.direccion || null
-        this.fCreacion = obj && obj.fCreacion || null
-       
-    }
+        this.fonocontacto = obj && obj.cantidad || null
+        this.categoria = obj && obj.cantidad || null
+        this.editorial = obj && obj.cantidad || null
+        this.raza = obj && obj.cantidad || null
+        this.edad = obj && obj.cantidad || null
+        this.altura = obj && obj.cantidad || null
+        this.hrini = obj && obj.cantidad || null
+        this.hrfin = obj && obj.cantidad || null
+        this.direccion = obj && obj.cantidad || null
+        this.fCreacion = obj && obj.cantidad || null
+}
 }
