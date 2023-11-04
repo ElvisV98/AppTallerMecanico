@@ -37,13 +37,25 @@
 
 
 export class ClProducto {
-  // si no Inicializo los valores, da Error
-  // Por eso es el constructor por obligación
   idProducto: number;
-  codigo:string;
+  codigo: string;
   nombreprod: string;
   precio: number;
   cantidad: number;
+  fechaNacimiento: string;
+  rut: string | null;
+  dv: string;
+  enfermedad: string;
+  fonocontacto: number;
+  categoria: string;
+  editorial: string;
+  raza: string;
+  edad: number;
+  altura: number;
+  hrini: string;
+  hrfin: string;
+  direccion: string;
+  fCreacion: string; 
 
   
   
@@ -54,7 +66,19 @@ export class ClProducto {
         this.nombreprod = obj && obj.nombreprod || null        
         this.precio = obj && obj.precio || null
         this.cantidad = obj && obj.cantidad || null
-
-       
-    }
+        this.fechaNacimiento = obj && obj.fechaNacimiento || null
+        this.rut = obj && obj.rut || null
+        this.dv = obj && obj.dv || null
+        this.enfermedad = obj && obj.enfermedad || null
+        this.fonocontacto = obj && obj.cantidad || null
+        this.categoria = obj && obj.cantidad || null
+        this.editorial = obj && obj.cantidad || null
+        this.raza = obj && obj.cantidad || null
+        this.edad = obj && obj.cantidad || null
+        this.altura = obj && obj.cantidad || null
+        this.hrini = obj && obj.cantidad || null
+        this.hrfin = obj && obj.cantidad || null
+        this.direccion = obj && obj.cantidad || null
+        this.fCreacion = obj && obj.cantidad || null
+}
 }

@@ -34,29 +34,20 @@ const routes: Routes = [
     loadChildren: () => import('./producto/product-all/product-all.module').then( m => m.ProductAllPageModule)
   },
   {
-    path: 'product-detail/:idProducto',
-    loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
-  },
-
-  {
     path: 'product-detail',
     loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
   },
-
-  {
-    path: 'product-edit/:idProducto',
-    loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
-  },
-
   {
     path: 'product-edit',
     loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
   },
-
   {
     path: 'product-list',
     loadChildren: () => import('./producto/product-list/product-list.module').then( m => m.ProductListPageModule)
   },
+  { path: 'product-detail/:idProducto', loadChildren: () => import('./producto/product-detail/product-detail.module').then(m => m.ProductDetailPageModule) },
+  { path: 'product-edit/:id', loadChildren: () => import('./producto/product-edit/product-edit.module').then(m => m.ProductEditPageModule) },
+  
 
   {
     path: 'usuario-add',
