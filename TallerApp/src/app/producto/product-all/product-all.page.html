@@ -29,6 +29,12 @@
   </div>
 
   <ion-item>
+    <ion-label>Código:</ion-label>
+    <ion-input type="text" [(ngModel)]="producto.codigo"></ion-input>
+  </ion-item>
+  
+  
+  <ion-item>
   <ion-label>Nombre:</ion-label>
   <!-- ngModel, Objeto producto del TypeScript -->
   <ion-input type="text" [(ngModel)]="producto.nombreprod">
@@ -54,7 +60,17 @@
 
   <div class="error-message" *ngIf="mostrarMensajeCantidad">La cantidad es obligatorio para crear producto.</div>
   
+  <ion-item>
+    <ion-label>Descripcion:</ion-label>
+    <!-- ngModel, Objeto producto del TypeScript -->
+    <ion-input type="text" [(ngModel)]="producto.editorial">
+    </ion-input>
+    </ion-item>
 
+
+  <div *ngIf="msgError">{{ msgError }}</div>
+
+ 
 
   <!--si existe producto.id entonces se despliega delete -->
   <ion-row>
@@ -75,5 +91,7 @@
     </ion-col>
 
   </ion-row>
+
+  
 
 </ion-content>

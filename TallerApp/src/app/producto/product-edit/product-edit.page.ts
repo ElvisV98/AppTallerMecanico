@@ -36,6 +36,7 @@ export class ProductEditPage implements OnInit {
   ,hrfin: '0'
   ,direccion: '0'
   ,fCreacion: ''
+  
 
   };
  
@@ -49,16 +50,22 @@ export class ProductEditPage implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    console.log("ngOnInit ID:" + this.route.snapshot.params['id']);
-    
+    console.log("ngOnInit ID:" + this.route.snapshot.params['id']); 
     this.getProduct(this.route.snapshot.params['id']);
- 
     this.productForm = this.formBuilder.group({
       'nombreprod': [null, Validators.required],
       'precio': [null, Validators.required],
-      'Cantidad': [null, Validators.required]
+      'Cantidad': [null, Validators.required],
+      'editorial': [null, Validators.required]
+
     });
   }
+
+  customCounterFormatter(inputLength: number, maxLength: number) {
+    return `${maxLength - inputLength} characters remaining`;
+  }
+
+
   async onFormSubmit(form: NgForm) {
     console.log("onFormSubmit ID:" + this.id)
     this.producto.idProducto = this.id;
@@ -67,8 +74,7 @@ export class ProductEditPage implements OnInit {
       .subscribe({
         next: (res) => {
           let id = res['idProducto'];
-          //this.router.navigate([ 'detail', { outlets: { details: id }} ]);
-          this.router.navigate(['/product-detail/' + this.id]);
+          this.router.navigate(['/product-list']);
         }
         , complete: () => { }
         , error: (err) => { console.log(err); }
@@ -76,27 +82,25 @@ export class ProductEditPage implements OnInit {
 
   }
 
-  // Método que permite leer el producto
+
   async getProduct(id: number) {
     // Crea Wait
       const loading = await this.loadingController.create({
         message: 'Loading...'
       });
-      // Muestra Wait
-      await loading.present();
-      // Obtiene el Observable
+    
+      await loading.present();    
       await this.restApi.getProduct(id)
         .subscribe({
           next: (data) => {
             console.log("getProductID data****");
-            console.log(data);
-            // Si funciona Rescata el los datos
-            this.id = data.idProducto;
-            // Actualiza los datos
+            console.log(data);            
+            this.id = data.idProducto;           
             this.productForm.setValue({
               nombreprod: data.nombreprod,
               precio: data.precio,
-              Cantidad: data.cantidad
+              Cantidad: data.cantidad,
+              editorial: data.editorial
             });
             loading.dismiss();
           }

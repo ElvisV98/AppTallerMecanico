@@ -3,34 +3,58 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>product-detail</ion-title>
+    <ion-title>Detalle del Producto</ion-title>
     <ion-buttons slot="end">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{producto.nombreprod}}</ion-card-title>
+      <ion-card-title>{{ producto.nombreprod }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-
       <ion-item>
-        <p>Precio : </p>
-        <p>{{producto.precio | currency}}</p>
+        <p>ID: {{ producto.idProducto }}</p>
       </ion-item>
 
       <ion-item>
-        <p>Cantidad : </p>
-        <p>{{producto.cantidad |currency:' ':true:'1.0-2'}}</p>
+        <p>Código: {{ producto.codigo }}</p>
       </ion-item>
 
-      <ion-button type="button" shape="round" color="primary" expand="block" href="/product-edit/{{producto.idProducto}}">Editar</ion-button>
-      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(producto.idProducto)">Eliminar</ion-button>
+      <ion-item>
+        <p>Precio: {{ producto.precio | currency }}</p>
+      </ion-item>
+
+      <ion-item>
+        <p>Cantidad: {{ producto.cantidad}}</p>
+      </ion-item>
+
+      <ion-item>
+        <p>Descripción: {{ producto.editorial }}</p>
+      </ion-item>
+
+      <ion-button
+        type="button"
+        shape="round"
+        color="primary"
+        expand="block"
+        href="/product-edit/{{ producto.idProducto }}"
+      >
+        Editar
+      </ion-button>
+      <ion-button
+        type="button"
+        shape="round"
+        color="danger"
+        expand="block"
+        (click)="delete(producto.idProducto)"
+      >
+        Eliminar
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -14,7 +14,7 @@ export class ProductAllPage implements OnInit {
   buttonLeerDisabled = false
   buttonActualizarDisabled = false
   buttonCrearDisabled = false
-  producto: ClProducto = {idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
+  producto: ClProducto = {idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
 
 formSubmitted = false;  
 mostrarMensajeId: boolean = false;
@@ -32,12 +32,14 @@ mostrarMensajeCantidad: boolean = false;
 
 
   leer() {
-    this.mostrarMensajeNombre = false; // Reinicia el estado del mensaje de validación
+    console.log("Función leer() llamada.");
+    this.mostrarMensajeNombre = false;
   
     if (this.producto.nombreprod) {
       // Llama a la función del servicio que busca por nombre y devuelve todos los campos
       this.productservice.getProductByName(this.producto.nombreprod).subscribe(
         (data) => {
+          console.log(data);
           if (data) {
             this.producto = data;
             this.buttonCrearDisabled = true;
@@ -53,6 +55,7 @@ mostrarMensajeCantidad: boolean = false;
         }
       );
     } else {
+      console.log("Nombre de producto no válido:", this.producto.nombreprod);
       this.msgError = "Nombre de producto no válido";
     }
   }
@@ -65,7 +68,7 @@ mostrarMensajeCantidad: boolean = false;
       this.productservice.deleteProduct(this.producto.idProducto).subscribe(
         () => {
           // Limpiar los campos y deshabilitar botones
-          this.producto = { idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
+          this.producto = { idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
           this.buttonCrearDisabled = false;
           this.buttonActualizarDisabled = true;
           this.buttonEliminarDisabled = true;

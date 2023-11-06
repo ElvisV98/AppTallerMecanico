@@ -4,6 +4,9 @@ import { LoadingController, AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClProducto } from '../model/ClProducto';
 import { ProductServiceService } from '../product-service.service';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import {CameraSource } from '@capacitor/camera/dist/esm/definitions';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,6 +18,9 @@ export class ProductAddPage implements OnInit {
   //Creamos una variable del tipo FormGroup
   // ! ==> Con esto le decimos a TS, que sabemos que la variable no esta inicializada
   //          y que estamos seguro que cuando se ejecute no será null
+
+  imageSource:any;
+
   productForm!: FormGroup;
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   producto: ClProducto = {
@@ -29,7 +35,7 @@ export class ProductAddPage implements OnInit {
     ,enfermedad: '0'
     ,fonocontacto: 0
     ,categoria: '0'
-    ,editorial: '0'
+    ,editorial: ''
     ,raza: '0'
     ,edad: 0
     ,altura: 0
@@ -40,32 +46,38 @@ export class ProductAddPage implements OnInit {
 
   };
 
-  // Injectamos FormBuilder, el cual nos permitirá realizar validaciones                         
+customCounterFormatter(inputLength: number, maxLength: number) {
+  return `${maxLength - inputLength} characters remaining`;
+}
+
+                           
   constructor(private formBuilder: FormBuilder,
-    // Injectamos las librerías necesarias
+    
     private loadingController: LoadingController,
     private restApi: ProductServiceService,
     private router: Router,
+    private domSanitizer:DomSanitizer,
   ) { }
 
-  // Antes que inicie en pantalla
-  // especificamos las validaciones, 
-  //    por medio de formBuilder injectado en el constructor
+  
   ngOnInit() {
-    // Especificamos que todos los campos son obligatorios
+
+   
+    
+
+   
     this.productForm = this.formBuilder.group({
       "nombreprod": [null, Validators.required],
       "codigo": [null, Validators.required],
       'precio': [null, Validators.required],
-      'Cantidad': [null, Validators.required]
+      'Cantidad': [null, Validators.required],
+      'editorial': [null, Validators.required]
     });
   }
   // se ejecutará cuando presione el Submit
   async onFormSubmit(form: NgForm) {
     
-    console.log("onFormSubmit del Product ADD")
-
-    // Creamos un Loading Controller, Ojo no lo muestra
+  console.log("onFormSubmit del Product ADD")
   console.log("Contenido de this.producto:", this.producto);
 
 
@@ -101,5 +113,27 @@ export class ProductAddPage implements OnInit {
       });
     console.log("Observe que todo lo del suscribe sale después de este mensaje")
   }
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source:CameraSource.Prompt,
+      saveToGallery:true
+      });
+    
+    //this.imageSource='data:image/jpeg;base64,' +image.base64String;
+    
+    //console.log(this.imageSource)
+    
+    this.imageSource=this.domSanitizer.bypassSecurityTrustUrl(image.webPath ? image.webPath : "");
+    
+    
+    }
+    getPhoto()
+    {
+      return this.imageSource;
+    }
 
 }

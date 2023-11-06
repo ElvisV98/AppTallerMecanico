@@ -27,7 +27,10 @@ export class ProductListPage implements OnInit {
     this.getProducts();
   }
 
+  
+
   // Método  que rescta los productos
+  
   async getProducts() {
     console.log("Entrando :getProducts");
     // Crea un Wait (Esperar)
@@ -56,11 +59,4 @@ export class ProductListPage implements OnInit {
         }
       })
   }
-
-
-  
-  // drop(event: CdkDragDrop<string[]>) {
-  //   console.log("Moviendo Item Array Drop ***************:");
-  //   moveItemInArray(this.productos, event.previousIndex, event.currentIndex);
-  // }
 }

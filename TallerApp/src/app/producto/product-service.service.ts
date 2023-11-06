@@ -35,6 +35,7 @@ export class ProductServiceService {
 
 
   getProducts(): Observable<ClProducto[]> {
+    
     return this.http.get<ClProducto[]>(apiUrl)
       .pipe(
         tap(products => console.log('fetched products')),
@@ -73,10 +74,19 @@ export class ProductServiceService {
   getProductByName(nombreprod: string): Observable<ClProducto> {
     const url = `${apiUrl}?nombre=${nombreprod}`;
     return this.http.get<ClProducto[]>(url).pipe(
-      map((productos) => productos[0]), // Obtén el primer producto (asumiendo que el nombre es único)
-      tap(_ => console.log('fetched product by name')),
+      map((productos) => {
+        const productoEncontrado = productos.find(producto => producto.nombreprod === nombreprod);
+        if (productoEncontrado) {
+          return productoEncontrado; // Si se encuentra, devuelve el producto encontrado
+        } else {
+          throw new Error("Producto no encontrado"); // Lanza un error si el producto no se encuentra
+        }
+      }),
+      tap(_ => console.log('Producto encontrado por nombre')),
       catchError(this.handleError<ClProducto>('getProductByName'))
     );
   }
-
+  
+  
 }
+

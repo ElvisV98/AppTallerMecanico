@@ -26,7 +26,7 @@ export class ProductDetailPage implements OnInit {
     ,enfermedad: ''
     ,fonocontacto: 0
     ,categoria: '0'
-    ,editorial: '0'
+    ,editorial: ''
     ,raza: '0'
     ,edad: 0
     ,altura: 0

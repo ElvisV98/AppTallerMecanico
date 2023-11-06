@@ -13,26 +13,50 @@
 
 <ion-content padding>
   <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
+
+    
+      <!--<img [src]="imageSource"style="width: 400px;"> -->
+      <ion-card>
+      <img [src]="getPhoto()" style="width: 400px; /">      
+      <ion-icon src="assets/icon/add-camara.svg"  (click)="takePicture()" class="icono-agregar" *ngIf="!getPhoto()"></ion-icon>          
+    </ion-card>
+      
+    
+    <ion-card>
+    <ion-item lines="none" >
+      <ion-label position="floating">Nombre del producto</ion-label>
       <ion-input type="text" [(ngModel)]="producto.nombreprod" formControlName="nombreprod"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-label position="floating" >Codigo</ion-label>
       <ion-input type="text" [(ngModel)]="producto.codigo" formControlName="codigo"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-label position="floating">Precio</ion-label>
       <ion-input type="number" [(ngModel)]="producto.precio" formControlName="precio"></ion-input>
     </ion-item>
+  </ion-card>
 
+
+  <ion-card >
+  <ion-input type="text" label="Descripción producto" labelPlacement="floating" 
+  [(ngModel)]="producto.editorial" formControlName="editorial" [counter]="true" maxlength="100"></ion-input>
+</ion-card>
+
+
+<ion-card >
     <ion-item>
       <ion-label position="floating">Cantidad</ion-label>
       <ion-input type="number" [(ngModel)]="producto.cantidad" formControlName="Cantidad"></ion-input>
     </ion-item>
 
+    </ion-card>
+
+    
+
+ 
     <ion-button type="submit" shape="round" color="primary" expand="block"
       [disabled]="!productForm.valid">agregar</ion-button>
   </form>
