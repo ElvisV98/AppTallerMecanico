@@ -1,12 +1,10 @@
 
-.cont-formulario {
-    background-color: white;
+.container {
+    background-color: red;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    padding: 1rem;
 }
 
 .titulo-form {
@@ -95,8 +93,4 @@ ion-checkbox::part(container) {
 p{
     font-size: small;
     color: gray;
-}
-
-ion-card {
-    padding: 1rem;
 }

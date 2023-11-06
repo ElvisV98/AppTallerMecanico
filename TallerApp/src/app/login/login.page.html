@@ -5,8 +5,16 @@
 
 <ion-content [fullscreen]="true">
 
-<div class="cont-formulario">
-  <ion-card>
+<div class="container">
+
+    <div class="alert alert-primary">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, magnam iure. Consectetur ab nulla similique ipsa quos unde magni in incidunt fugiat deserunt reiciendis perferendis animi omnis, iusto esse officiis?
+    </div>
+
+    <div class="alert alert-success" role="alert">
+      A simple success alert—check it out!
+    </div>
+  
     <div class="titulo-form">
       <h1>Iniciar Sesión </h1>
       <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
@@ -58,9 +66,6 @@
       <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
 
       </div>
-    </ion-card>
-    <ion-button (click)="play()">Inicio</ion-button>
-    <ion-button (click)="stop()">Parar</ion-button>
   </div>
 
 </ion-content>

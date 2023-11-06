@@ -2,7 +2,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Animation } from '@ionic/angular';
-import { AnimationController, IonCard } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -11,9 +11,8 @@ import { AnimationController, IonCard } from '@ionic/angular';
 })
 
 export class LoginPage implements OnInit {
-  @ViewChild(IonCard, { read: ElementRef, static: false }) card!: ElementRef<HTMLIonCardElement>;
+ 
   
-  private animation!: Animation;
   
   contrasena: string = '';
   correo: string = '';
@@ -22,28 +21,16 @@ export class LoginPage implements OnInit {
   correoValido: boolean = false;  // Variable para controlar la validez del correo
   contrasenaValida: boolean = false;  // Variable para controlar la validez de la contraseña
 
-  constructor(private router: Router, private animationCtrl: AnimationController) { }
+ 
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    this.animation = this.animationCtrl
-      .create()
-      .addElement(this.card.nativeElement)
-      .duration(4000)
-      .iterations(Infinity)
-      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-      .fromTo('opacity', '1', '0.2');
+
   }
 
-  play() {
-    this.animation.play();
-  }
-
-  stop() {
-    this.animation.stop();
-  }
+  
 
   validarContrasena() {
     if (this.contrasena === '') {
@@ -82,11 +69,6 @@ export class LoginPage implements OnInit {
       this.correoValido = false; // El correo no es válido
     }
   }
-
-
-
-
-  
 }
 
 
