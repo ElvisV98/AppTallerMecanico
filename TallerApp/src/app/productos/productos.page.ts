@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-productos',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.page.scss'],
 })
 export class ProductosPage implements OnInit {
+  
+  selectedOption: string;
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {
+    this.selectedOption = ''; // Inicializa en el constructor
+  }
+  
 
   ngOnInit() {
   }
@@ -25,4 +31,12 @@ export class ProductosPage implements OnInit {
       this.cantidad--;
     }
   }
+
+
+  redirectToProductList() {
+    if (this.selectedOption) {
+      this.navCtrl.navigateForward(['/product-list', this.selectedOption]);
+    }
+  }
 }
+

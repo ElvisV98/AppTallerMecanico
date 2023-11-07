@@ -59,9 +59,8 @@
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-select label="Ordenar por:" interface="popover" placeholder="Seleccionar">
-              <ion-select-option value="mayor-valor">Mayor valor</ion-select-option>
-              <ion-select-option value="menor-valor">Menor valor</ion-select-option>
+            <ion-select label="Ordenar por:" interface="popover" placeholder="Seleccionar" [(ngModel)]="selectedOption" (ionChange)="redirectToProductList()">
+              <ion-select-option value="mayor-valor">lista de productos</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
