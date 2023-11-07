@@ -116,15 +116,18 @@ ion-grid {
 
 
 ion-input.custom {
-    // color: #FF1616;
-    // --color: gray;
     --highlight-color: red;
     --placeholder-color: gray;
+    
+    
 }
 
-.label-text {
+.title-label {
+    
     color: #FF1616;
-  }
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
   
 

@@ -53,9 +53,9 @@
     </ion-card>
   </div> -->
 
-<ion-grid>
-  <ion-row>
-    <ion-col>
+<ion-grid mode="ios">
+  <ion-row mode="ios">
+    <ion-col mode="ios">
 
       <div class="titulo-form">
         <h3>Iniciar Sesión </h3>
@@ -64,77 +64,36 @@
 
       <div class="body-form">
 
-        <ion-list>
-          <ion-item>
-            <ion-input
-              type="email"
-              labelPlacement="stacked"
-              placeholder="Enter text to see clear button"
-              class="custom"
-              >
-              <div slot="label" class="title-label">Email</div>
-            </ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-input 
-              type="email"
-              class="custom"
-              labelPlacement="floating"
-              >
-              <div slot="label" class="title-label">Email</div>
-            </ion-input>
-          </ion-item>
-        </ion-list>
         
-        <ion-input mode="ios"
-          type="email"
-          fill="solid"
-          label="Email"
-          class="custom"
-          placeholder="Correo Electronico"
-          labelPlacement="floating"
-          ngModel
-          email>
-        </ion-input>
+        <ion-item>
+          <ion-input mode="ios"
+            type="email"
+            inputmode="email"
+            labelPlacement="stacked"
+            placeholder="Correo electronico"
+            class="custom">
+            <div slot="label" class="title-label">Email</div>
+          </ion-input>
+        </ion-item>
 
-        <ion-input mode="ios"
-          type="password"
-          fill="solid"
-          labelPlacement="floating"
-          class="custom"
-          label="Contraseña"
-          placeholder="Contraseña"
-          
-          ngModel>
-        </ion-input>
+        <ion-item>
+          <ion-input mode="ios"
+            type="password"
+              fill="solid"
+              labelPlacement="stacked"
+              class="custom"
+              placeholder="Contraseña"
+              ngModel>
+              <div slot="label" class="title-label">Contraseña</div>
+            </ion-input>
+         </ion-item>
 
-        <ion-input label="Default counter" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
-
-  <ion-input
-    id="custom-input"
-    label="Custom Counter Format"
-    labelPlacement="floating"
-    [counter]="true"
-    maxlength="20"
-  ></ion-input>
+        
       </div>
-
 
     </ion-col>
   </ion-row>
 </ion-grid>
-
-
-
 </ion-content>
-
-<style>
-  {
-
-  
-  textLabel = selectClass("label-text")
-  }
-  </style>
 
 
