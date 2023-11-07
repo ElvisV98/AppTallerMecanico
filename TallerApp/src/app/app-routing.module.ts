@@ -34,20 +34,29 @@ const routes: Routes = [
     loadChildren: () => import('./producto/product-all/product-all.module').then( m => m.ProductAllPageModule)
   },
   {
+    path: 'product-detail/:idProducto',
+    loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+
+  {
     path: 'product-detail',
     loadChildren: () => import('./producto/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
   },
+
+  {
+    path: 'product-edit/:idProducto',
+    loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },
+
   {
     path: 'product-edit',
     loadChildren: () => import('./producto/product-edit/product-edit.module').then( m => m.ProductEditPageModule)
   },
+
   {
     path: 'product-list',
     loadChildren: () => import('./producto/product-list/product-list.module').then( m => m.ProductListPageModule)
   },
-  { path: 'product-detail/:idProducto', loadChildren: () => import('./producto/product-detail/product-detail.module').then(m => m.ProductDetailPageModule) },
-  { path: 'product-edit/:id', loadChildren: () => import('./producto/product-edit/product-edit.module').then(m => m.ProductEditPageModule) },
-  
 
   {
     path: 'usuario-add',
@@ -99,47 +108,10 @@ const routes: Routes = [
     loadChildren: () => import('./localizacion/localizacion.module').then( m => m.LocalizacionPageModule)
   },
 
- 
-  {
-    path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
-  },
-
-
-  {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
-  },
-
- 
-  {
-    path: 'reserva',
-    loadChildren: () => import('./reserva/reserva.module').then( m => m.ReservaPageModule)
-  },
-
-
-  {
-    path: 'calendario',
-    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
-  },
-
- 
-  {
-    path: 'usuarios',
-    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
-  },
-
   {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-
-
-
-
-
-
-
  
 
 ];
@@ -148,7 +120,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

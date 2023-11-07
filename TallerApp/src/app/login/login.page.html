@@ -1,24 +1,8 @@
-<ion-header [translucent]="true">
-    <title>Hola</title>
-</ion-header>
-
-
 <ion-content [fullscreen]="true">
 
-<div class="container">
-
-    <div class="alert alert-primary">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, magnam iure. Consectetur ab nulla similique ipsa quos unde magni in incidunt fugiat deserunt reiciendis perferendis animi omnis, iusto esse officiis?
-    </div>
-
-    <div class="alert alert-success" role="alert">
-      A simple success alert—check it out!
-    </div>
-  
-    <div class="titulo-form">
-      <h1>Iniciar Sesión </h1>
-      <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
-    </div>
+<!-- <div class="cont-formulario">
+  <ion-card>
+    
 
     <div class="cuerpo-form">
 
@@ -62,14 +46,72 @@
 
       </div>
 
-      <ion-button class="boton-ingresar" [routerLink]="['/tabs/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
+      <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
       <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
 
       </div>
-  </div>
+    </ion-card>
+  </div> -->
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+
+      <div class="titulo-form">
+        <h3>Iniciar Sesión </h3>
+        <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
+      </div>
+
+      <div class="body-form">
+        
+        <ion-input mode="ios"
+          type="email"
+          fill="solid"
+          label="Email"
+          class="custom"
+          placeholder="Correo Electronico"
+          labelPlacement="floating"
+          ngModel
+          email>
+        </ion-input>
+
+        <ion-input mode="ios"
+          type="password"
+          fill="solid"
+          labelPlacement="floating"
+          class="custom"
+          label="Contraseña"
+          placeholder="Contraseña"
+          
+          ngModel>
+        </ion-input>
+
+        <ion-input label="Default counter" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
+
+  <ion-input
+    id="custom-input"
+    label="Custom Counter Format"
+    labelPlacement="floating"
+    [counter]="true"
+    maxlength="20"
+  ></ion-input>
+      </div>
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
 
 </ion-content>
 
+<style>
+  {
 
+  
+  textLabel = selectClass("label-text")
+  }
+  </style>
 
 

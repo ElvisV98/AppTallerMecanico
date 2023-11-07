@@ -1,10 +1,109 @@
 
-.container {
-    background-color: red;
+// :host {
+//     --box-shadow: none !important;
+// }
+
+// .cont-formulario {
+//     background-color: white;
+//    
+// }
+
+// ion-card {
+//     --box-shadow: none;
+// }
+
+
+// .cuerpo-form {
+//     display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
+//     justify-content: center; //CENTRA ELEMENTOS
+//     flex-direction: column;
+//     width: 100%;
+//     color: red($color: #000000); 
+       
+// }
+
+// .estilo-correo, .estilo-pass{
+//     color: red;
+// }
+
+// .footer-form {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     padding: 2rem 1rem 1rem;
+// }
+
+
+// .boton-ingresar{
+//     --background: red!important;
+//     display: block;  
+     
+// }
+
+// .boton-recuperar-contraseña {
+//     position: relative;
+//     top: -30px;
+//     right: 10px;
+//     font-size: 9px;
+//   }
+
+// .fila-form {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+// }
+
+// ion-checkbox {
+//     --size: 20px;
+//     --checkbox-background-checked: red;
+//     color: black;
+//     position: relative;
+//     top: -30px;
+//     right: 15px;
+//     font-size: 15px;
+// }
+  
+// ion-checkbox::part(container) {
+//     border-radius: 6px;
+//     border: 2px solid gray;
+// }
+
+// .checkbox-wrapper {
+//     flex-direction: row-reverse;
+// }
+
+// .estilo-imagen{
+//     width: 40%;
+// }
+
+// .boton-registrarse{
+//     font-size: 12px;
+//     --color: gray;
+// }
+
+// .boton-recuperar-contraseña{
+//     --color: gray;
+// }
+
+// p{
+//     font-size: small;
+//     color: gray;
+// }
+
+// ion-card {
+//     padding: 1rem;
+// }
+
+ion-grid {
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: 100%;
 }
 
 .titulo-form {
@@ -16,81 +115,16 @@
 }
 
 
-.cuerpo-form {
-    display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
-    justify-content: center; //CENTRA ELEMENTOS
-    flex-direction: column;
-    width: 100%;
-    color: red($color: #000000); 
-       
+ion-input.custom {
+    // color: #FF1616;
+    // --color: gray;
+    --highlight-color: red;
+    --placeholder-color: gray;
 }
 
-.estilo-correo, .estilo-pass{
-    color: red;
-}
-
-.footer-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem 1rem 1rem;
-}
-
-
-.boton-ingresar{
-    --background: red!important;
-    display: block;  
-     
-}
-
-.boton-recuperar-contraseña {
-    position: relative;
-    top: -30px;
-    right: 10px;
-    font-size: 9px;
+.label-text {
+    color: #FF1616;
   }
 
-.fila-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-ion-checkbox {
-    --size: 20px;
-    --checkbox-background-checked: red;
-    color: black;
-    position: relative;
-    top: -30px;
-    right: 15px;
-    font-size: 15px;
-}
   
-ion-checkbox::part(container) {
-    border-radius: 6px;
-    border: 2px solid gray;
-}
 
-.checkbox-wrapper {
-    flex-direction: row-reverse;
-}
-
-.estilo-imagen{
-    width: 40%;
-}
-
-.boton-registrarse{
-    font-size: 12px;
-    --color: gray;
-}
-
-.boton-recuperar-contraseña{
-    --color: gray;
-}
-
-p{
-    font-size: small;
-    color: gray;
-}

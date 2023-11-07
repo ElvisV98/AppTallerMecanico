@@ -18,27 +18,26 @@ export class ProductAddPage implements OnInit {
   productForm!: FormGroup;
   // Generalmente se usa una interface, sin embargo para jugar utilizaremos  una clase
   producto: ClProducto = {
-    idProducto: 0
-    ,codigo:'09-G13'
+    idProducto: 1
+    ,codigo:"09-G13"
     , nombreprod: ''
-    , precio: 1
+    , precio: 0
     , cantidad: 1
-    ,fechaNacimiento: ''
-    ,rut: '0'
-    ,dv: '0'
-    ,enfermedad: '0'
+    ,fechaNacimiento: new Date()
+    ,rut: null
+    ,dv: ""
+    ,enfermedad: ""
     ,fonocontacto: 0
-    ,categoria: '0'
-    ,editorial: '0'
-    ,raza: '0'
+    ,categoria: ""
+    ,editorial: ""
+    ,raza: ""
     ,edad: 0
     ,altura: 0
-    ,hrini: '0'
-    ,hrfin: '0'
-    ,direccion: '0'
-    ,fCreacion: ''
-
-  };
+    ,hrini: ""
+    ,hrfin: ""
+    ,direccion: ""
+    ,fCreacion: new Date()
+  };
 
   // Injectamos FormBuilder, el cual nos permitirá realizar validaciones                         
   constructor(private formBuilder: FormBuilder,
@@ -54,10 +53,10 @@ export class ProductAddPage implements OnInit {
   ngOnInit() {
     // Especificamos que todos los campos son obligatorios
     this.productForm = this.formBuilder.group({
-      "nombreprod": [null, Validators.required],
-      "codigo": [null, Validators.required],
-      'precio': [null, Validators.required],
-      'Cantidad': [null, Validators.required]
+      "prod_nombre": [null, Validators.required],
+      "prod_codigo": [null, Validators.required],
+      'prod_precio': [null, Validators.required],
+      'prod_cantidad': [null, Validators.required]
     });
   }
   // se ejecutará cuando presione el Submit
@@ -66,18 +65,11 @@ export class ProductAddPage implements OnInit {
     console.log("onFormSubmit del Product ADD")
 
     // Creamos un Loading Controller, Ojo no lo muestra
-  console.log("Contenido de this.producto:", this.producto);
-
-
     const loading = await this.loadingController.create({
       message: 'Loading...'
     });
     // Muestra el Loading Controller
     await loading.present();
-
-
-    console.log("Datos que se van a enviar:", this.producto);  
-
 
     // Ejecuta el método del servicio y los suscribe
     await this.restApi.addProduct(this.producto)
