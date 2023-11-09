@@ -1,99 +1,44 @@
 <ion-content [fullscreen]="true">
 
-<!-- <div class="cont-formulario">
-  <ion-card>
+  <ion-grid mode="ios">
+    <ion-row>
+      <ion-col>
+
+        <div class="titulo-form">
+          <h3>Iniciar Sesión </h3>
+          <img src="/assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
+        </div>
+
+        <div class="body-form">
+
+          <ion-item>
+            <ion-label position="stacked" class="title-label" id="email">Email</ion-label>
+            <ion-input type="email" inputmode="email" placeholder="Correo electronico" class="custom-input" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-item class="end">
+            <ion-label position="stacked" class="title-label">Contraseña</ion-label>
+            <ion-input type="{{passwordVisible ? 'text' : 'password'}}" placeholder="Contraseña" class="custom-input" [(ngModel)]="password"></ion-input>
+            <ion-icon name="{{passwordVisible ? 'eye' : 'eye-off'}}" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+          </ion-item> 
+        </div>
+
+        <div class="footer-form">
+        
+          <div class="fila-form">
+            <ion-checkbox class="chkbox-recordar" labelPlacement="end" justify="start">Recordar</ion-checkbox>
+            <ion-button  class="btn-olvido" [routerLink]="['/recuperar-password']" fill="clear" >¿Olvido su contraseña?</ion-button>
     
+          </div>
+    
+          <ion-button class="btn-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Iniciar Sesion</ion-button>
+          <ion-button class="btn-registrar" [routerLink]="['/registrarse']" fill="clear">Registrarse </ion-button>
+    
+        </div>
 
-    <div class="cuerpo-form">
-
-      <ion-input
-        type="email"
-        label="Email"
-        labelPlacement="floating"
-        position="floating"
-        [(ngModel)]="correo"
-        (input)="validarCorreo()"
-        placeholder="Ingresa correo">
-      </ion-input>
-      <div class="mensaje-validacion" [hidden]="!mostrarMensajeCorreo">
-      <p>Ingresa una dirección de correo electrónico válida.</p>
-      </div>
-
-      
-
-      <ion-input
-        type="password"
-        label="Contraseña"
-        labelPlacement="floating"
-        [(ngModel)]="contrasena"
-        (input)="validarContrasena()"
-        maxlength="8">
-      </ion-input>
-      <div class="mensaje-validacion" [hidden]="!mostrarMensaje">
-      <p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
-      </div>
-
-      
-
-    </div>
-
-    <div class="footer-form">
-      
-      <div class="fila-form">
-
-        <ion-checkbox class="chkbox-recordar">Recordar</ion-checkbox>
-        <ion-button  class="boton-recuperar-contraseña" [routerLink]="['/recuperar-password']" fill="clear" >¿Olvido su contraseña?</ion-button>
-
-      </div>
-
-      <ion-button class="boton-ingresar" [routerLink]="['/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
-      <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
-
-      </div>
-    </ion-card>
-  </div> -->
-
-<ion-grid mode="ios">
-  <ion-row mode="ios">
-    <ion-col mode="ios">
-
-      <div class="titulo-form">
-        <h3>Iniciar Sesión </h3>
-        <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="Logo" class="estilo-imagen">
-      </div>
-
-      <div class="body-form">
-
-        
-        <ion-item>
-          <ion-input mode="ios"
-            type="email"
-            inputmode="email"
-            labelPlacement="stacked"
-            placeholder="Correo electronico"
-            class="custom">
-            <div slot="label" class="title-label">Email</div>
-          </ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-input mode="ios"
-            type="password"
-              fill="solid"
-              labelPlacement="stacked"
-              class="custom"
-              placeholder="Contraseña"
-              ngModel>
-              <div slot="label" class="title-label">Contraseña</div>
-            </ion-input>
-         </ion-item>
-
-        
-      </div>
-
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 

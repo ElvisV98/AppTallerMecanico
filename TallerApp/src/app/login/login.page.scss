@@ -1,101 +1,11 @@
 
-// :host {
-//     --box-shadow: none !important;
-// }
-
-// .cont-formulario {
-//     background-color: white;
-//    
-// }
-
-// ion-card {
-//     --box-shadow: none;
-// }
-
-
-// .cuerpo-form {
-//     display: flex;    //CENTRA COSAS DENTRO DEL ELEMENTO VERTICAL
-//     justify-content: center; //CENTRA ELEMENTOS
-//     flex-direction: column;
-//     width: 100%;
-//     color: red($color: #000000); 
-       
-// }
-
-// .estilo-correo, .estilo-pass{
-//     color: red;
-// }
-
-// .footer-form {
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     padding: 2rem 1rem 1rem;
-// }
-
-
-// .boton-ingresar{
-//     --background: red!important;
-//     display: block;  
-     
-// }
-
-// .boton-recuperar-contraseña {
-//     position: relative;
-//     top: -30px;
-//     right: 10px;
-//     font-size: 9px;
-//   }
-
-// .fila-form {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     width: 100%;
-// }
-
-// ion-checkbox {
-//     --size: 20px;
-//     --checkbox-background-checked: red;
-//     color: black;
-//     position: relative;
-//     top: -30px;
-//     right: 15px;
-//     font-size: 15px;
-// }
-  
-// ion-checkbox::part(container) {
-//     border-radius: 6px;
-//     border: 2px solid gray;
-// }
-
-// .checkbox-wrapper {
-//     flex-direction: row-reverse;
-// }
-
-// .estilo-imagen{
-//     width: 40%;
-// }
-
-// .boton-registrarse{
-//     font-size: 12px;
-//     --color: gray;
-// }
-
-// .boton-recuperar-contraseña{
-//     --color: gray;
-// }
 
 // p{
 //     font-size: small;
 //     color: gray;
 // }
 
-// ion-card {
-//     padding: 1rem;
-// }
-
+/* TODO: Contenedor Form*/
 ion-grid {
     background-color: white;
     position: absolute;
@@ -103,31 +13,98 @@ ion-grid {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1rem;
-    width: 100%;
+    width: 95%;
 }
 
+
+/* TODO: Header Form*/
 .titulo-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
-    color: black;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
 }
 
-
-ion-input.custom {
-    --highlight-color: red;
-    --placeholder-color: gray;
-    
-    
+.estilo-imagen{
+    width: 40%;
 }
 
-.title-label {
-    
+/* TODO: Cuerpo Form*/
+ion-item {
+    padding-bottom: 2.5rem;
+}
+
+ion-item.end {
+    padding-bottom: 0.7rem;
+}
+
+.title-label { 
     color: #FF1616;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    padding: 0 0 0.26rem;
 }
 
-  
+.custom-input {
+    --highlight-color: red;
+    --placeholder-color: gray;
+    font-size: 0.8rem;
+}
+
+/* TODO: Footer form*/
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+.fila-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+}
+
+ion-checkbox {
+    --size: 20px;
+    --border-radius: 6px;
+    --border-color: gray;
+    --checkmark-color: white;
+    --checkmark-width: 3px;
+    --checkbox-background-checked: #fa5b5b;
+    --border-color-checked: gray;
+    --transition: 0.2s;
+    color: black;
+    font-size: 15px;
+}
+
+.btn-olvido {
+    font-size: 15px;
+    color: #989EB1;
+    font-weight: 500;
+}
+
+.btn-ingresar{
+    --background: red!important;
+    display: block;
+    padding: 2rem 0 1.5rem;
+    width: 35%;
+    text-align: center;
+     
+}
+
+.btn-registrar{
+    font-size: 15px;
+    --color: #F85F6A;
+    padding: 0;
+    margin: 0;
+
+}
+
+
 

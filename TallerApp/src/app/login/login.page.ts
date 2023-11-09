@@ -11,8 +11,12 @@ import { AnimationController, IonCard } from '@ionic/angular';
 export class LoginPage implements OnInit {
   @ViewChild(IonCard, { read: ElementRef, static: false }) card!: ElementRef<HTMLIonCardElement>;
   
-  contrasena: string = '';
-  correo: string = '';
+  password: string = '';
+  passwordVisible: boolean = false;
+
+  
+
+  email: string = '';
   mostrarMensaje: boolean = false;
   mostrarMensajeCorreo: boolean = false;
   correoValido: boolean = false;  // Variable para controlar la validez del correo
@@ -21,17 +25,19 @@ export class LoginPage implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
   validarContrasena() {
-    if (this.contrasena === '') {
+    if (this.password === '') {
       // El campo de contraseña está vacío, no mostrar el mensaje de validación
       this.mostrarMensaje = false;
       this.contrasenaValida = false; // La contraseña no es válida
     } else {
       const regex = /^(?=.*[0-9].*[0-9].*[0-9].*[0-9])(?=.*[A-Z])(?=.*[a-zA-Z].*[a-zA-Z].*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
-      if (regex.test(this.contrasena)) {
+      if (regex.test(this.password)) {
         // La contraseña cumple con los requisitos, ocultar el mensaje de validación
         this.mostrarMensaje = false;
         this.contrasenaValida = true; // La contraseña es válida
@@ -46,11 +52,11 @@ export class LoginPage implements OnInit {
   validarCorreo() {
     const regexCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    if (this.correo === '') {
+    if (this.email === '') {
       // El campo de correo está vacío, oculta el mensaje de validación
       this.mostrarMensajeCorreo = false;
 
-    }else if (regexCorreo.test(this.correo)) {
+    }else if (regexCorreo.test(this.email)) {
       // El correo electrónico es válido, ocultar el mensaje de validación
       this.mostrarMensajeCorreo = false;
       this.correoValido = true; // El correo es válido
