@@ -19,8 +19,8 @@ export class LoginPage implements OnInit {
   email: string = '';
   mostrarMensaje: boolean = false;
   mostrarMensajeCorreo: boolean = false;
-  correoValido: boolean = false;  // Variable para controlar la validez del correo
-  contrasenaValida: boolean = false;  // Variable para controlar la validez de la contraseña
+  correoValido: boolean = false;
+  contrasenaValida: boolean = false;
 
   ngOnInit(): void {
   }
@@ -31,18 +31,15 @@ export class LoginPage implements OnInit {
 
   validarContrasena() {
     if (this.password === '') {
-      // El campo de contraseña está vacío, no mostrar el mensaje de validación
       this.mostrarMensaje = false;
-      this.contrasenaValida = false; // La contraseña no es válida
+      this.contrasenaValida = false;
     } else {
       const regex = /^(?=.*[0-9].*[0-9].*[0-9].*[0-9])(?=.*[A-Z])(?=.*[a-zA-Z].*[a-zA-Z].*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
       if (regex.test(this.password)) {
-        // La contraseña cumple con los requisitos, ocultar el mensaje de validación
         this.mostrarMensaje = false;
-        this.contrasenaValida = true; // La contraseña es válida
+        this.contrasenaValida = true;
       } else {
-        // La contraseña no cumple con los requisitos, mostrar el mensaje de validación
         this.mostrarMensaje = true;
         this.contrasenaValida = false; // La contraseña no es válida
       }
