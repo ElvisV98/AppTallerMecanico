@@ -5,32 +5,47 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
-
   <div class="titulo-form">
-    <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="logo" class="estilo-imagen" >  
+    <img src="assets/img/logo-vertical-musu-performance-blanco.png" alt="logo" class="estilo-imagen">  
     <h1>Crear una nueva cuenta</h1>
   </div>
 
   <div class="form-register">
-  <ion-input 
-  type="text"
-  fill="none" 
-  label="Nombre"
-  labelPlacement="floating"
-  class="mi-input">
-</ion-input>
+    <ion-input 
+    type="text"
+    fill="none" 
+    label="Nombre"
+    labelPlacement="floating"
+    class="mi-input"
+    [(ngModel)]="nombre"
+    (ionInput)="validarNombre()">
+  </ion-input>
+  
+  <div class="mensaje-validacion" [hidden]="!mostrarMensajeNombre">
+    <div class="mensaje-error">
+      <ion-icon name="alert-circle-outline" class="mensaje-icon"></ion-icon>
+      <p class="mensaje-texto">Por favor, ingrese un nombre válido sin números ni caracteres especiales.</p>
+    </div>
+  </div>
 
+    <ion-input 
+    type="text"
+    fill="none" 
+    label="Apellido"
+    labelPlacement="floating"
+    class="mi-input"
+    [(ngModel)]="apellido"
+    (ionInput)="validarApellido()">
+  </ion-input>
 
-<ion-input 
-  type="text"
-  fill="none" 
-  label="Apellido"
-  labelPlacement="floating"
-  class="mi-input">
-</ion-input>
+  <div class="mensaje-validacion" [hidden]="!mostrarMensajeApellido">
+    <div class="mensaje-error">
+      <ion-icon name="alert-circle-outline" class="mensaje-icon"></ion-icon>
+      <p class="mensaje-texto">Por favor, ingrese un nombre válido sin números ni caracteres especiales.</p>
+    </div>
+  </div>
 
-<ion-input class="estilo-correo"
+  <ion-input class="estilo-correo"
   type="email"
   fill="none" 
   label="Correo electrónico"
@@ -39,28 +54,33 @@
   [(ngModel)]="correo"
   (input)="validarCorreo()"> 
 </ion-input>
+
 <div class="mensaje-validacion" [hidden]="!mostrarMensajeCorreo">
-  <p>Ingresa una dirección de correo electrónico válida.</p>
+  <div class="mensaje-error">
+    <ion-icon name="alert-circle-outline" class="mensaje-icon"></ion-icon>
+    <p class="mensaje-texto">Por favor, ingrese un correo electrónico válido.</p>
+  </div>
+</div>
+
+
+    <ion-input class="estilo-pass"  
+      type="password"
+      fill="none" 
+      label="Contraseña"
+      labelPlacement="floating"
+      class="mi-input"
+      [(ngModel)]="contrasena"
+      (input)="validarContrasena()"
+      maxlength="8">
+    </ion-input>
+    
+    <div class="mensaje-validacion" [hidden]="!mostrarMensaje">
+      <p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
+    </div>
   </div>
 
-
-
-<ion-input class="estilo-pass"  
-  type="password"
-  fill="none" 
-  label="Contraseña"
-  labelPlacement="floating"
-  class="mi-input"
-  [(ngModel)]="contrasena"
-  (input)="validarContrasena()"
-  maxlength="8">
-</ion-input>
-<div class="mensaje-validacion" [hidden]="!mostrarMensaje">
-<p>La contraseña debe contener al menos 4 números, 3 caracteres y 1 mayúscula.</p>
-</div>
-</div>
-
-<ion-button  class="boton-registrarse" [routerLink]="['/login']" [disabled]="!correoValido || !contrasenaValida"   >Registrarse </ion-button>
-
-
+  <ion-button class="boton-registrarse" [routerLink]="['/login']" [disabled]="!correoValido || !contrasenaValida || !nombreValido || !apellidoValido">
+    Registrarse
+  </ion-button>
 </ion-content>
+

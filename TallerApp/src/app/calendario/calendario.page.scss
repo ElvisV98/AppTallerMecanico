@@ -1,3 +1,36 @@
 ion-datetime{
     margin-left: 20px;
 }
+
+/* CSS personalizado en tu archivo de estilos */
+ 
+/*card inicial */
+.contenedor {
+    display: flex;
+    align-items: center;
+  }
+  
+  .estilo-imagen {
+    max-width: 100px;
+    margin-right: 10px;
+  }
+  
+  .texto {
+    flex: 1;
+  }
+  
+  .texto ion-card-title {
+    font-size: 20px;
+    text-align: justify;
+    font-weight: bold;
+  }
+  
+  .texto p {  
+  
+    font-size: 10px;
+    text-align: justify;
+    font-weight: bold;
+  }
+
+
+  

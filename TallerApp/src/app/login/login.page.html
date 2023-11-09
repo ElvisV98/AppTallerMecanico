@@ -14,18 +14,22 @@
 
     <div class="cuerpo-form">
 
-      <ion-input
-        type="email"
-        label="Email"
-        labelPlacement="floating"
-        position="floating"
-        [(ngModel)]="correo"
-        (input)="validarCorreo()"
-        placeholder="Ingresa correo">
-      </ion-input>
-      <div class="mensaje-validacion" [hidden]="!mostrarMensajeCorreo">
-      <p>Ingresa una dirección de correo electrónico válida.</p>
-      </div>
+      <ion-input 
+      type="text"
+      fill="none" 
+      label="Nombre"
+      labelPlacement="floating"
+      class="mi-input"
+      [(ngModel)]="nombre"
+      (ionInput)="validarNombre()">
+    </ion-input>
+
+  <div class="mensaje-validacion" [hidden]="!mostrarMensajeNombre">
+    <div class="mensaje-error">
+      <ion-icon name="alert-circle-outline" class="mensaje-icon"></ion-icon>
+      <p class="mensaje-texto">Por favor, ingrese un nombre válido sin números ni caracteres especiales.</p>
+    </div>
+  </div>
 
       
 
@@ -54,7 +58,7 @@
 
       </div>
 
-      <ion-button class="boton-ingresar" [routerLink]="['/tabs/home']" [disabled]="!correoValido || !contrasenaValida">Ingresar</ion-button>
+      <ion-button class="boton-ingresar" [routerLink]="['/tabs/home']" [disabled]=" !contrasenaValida">Ingresar</ion-button>
       <ion-button class="boton-registrarse" [routerLink]="['/registrarse']"  fill="clear" >Registrarse </ion-button>
 
       </div>

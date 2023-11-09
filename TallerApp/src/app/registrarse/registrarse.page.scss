@@ -5,7 +5,7 @@
   }
   
   .mi-input {
-    border: 2px solid #858585;
+    border: 2px solid;
     border-radius: 5px;
     font-size: 16px;
     color: black;
@@ -30,7 +30,34 @@
     font-size: 20px;
     margin-bottom: 10px; /* Añade espacio debajo del título */
   }
+
+
+
+  .mensaje-validacion {
+    margin-top: 1px; /* Espaciado superior para separar del campo de entrada */
+  }
   
+  .mensaje-error {
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    background-color: #f8d7da; /* Color de fondo para mensajes de error */
+    border: 1px solid #721c24; /* Borde para mensajes de error */
+    padding: 1px; /* Espaciado interno para mensajes de error */
+    border-radius: 5px;
+    margin-bottom: 5PX; /* Borde redondeado para mensajes de error */
+  }
+  
+  .mensaje-icon {
+    color: #721c24; /* Color del icono de error */
+    font-size: 24px; /* Tamaño del icono de error */
+    margin-right: 8px; /* Espaciado derecho para separar el icono del texto */
+  }
+  
+  .mensaje-texto {
+    color: #721c24; /* Color del texto de error */
+    margin: 0;
+    font-size: 10PX; /* Elimina el margen del texto de error */
+  }
   
   
   

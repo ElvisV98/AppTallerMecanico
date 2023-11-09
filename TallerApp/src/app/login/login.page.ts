@@ -21,7 +21,9 @@ export class LoginPage implements OnInit {
   mostrarMensajeCorreo: boolean = false;
   correoValido: boolean = false;  // Variable para controlar la validez del correo
   contrasenaValida: boolean = false;  // Variable para controlar la validez de la contraseña
-
+  nombre: string = ''; // Agregado para el nombre
+  mostrarMensajeNombre: boolean = false; // Agregado para el nombre
+  
   constructor(private router: Router, private animationCtrl: AnimationController) { }
 
   ngOnInit(): void {
@@ -65,21 +67,16 @@ export class LoginPage implements OnInit {
     }
   }
 
-  validarCorreo() {
-    const regexCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  validarNombre() {
+    const regexNombre = /^[a-zA-Z]+$/;
 
-    if (this.correo === '') {
-      // El campo de correo está vacío, oculta el mensaje de validación
-      this.mostrarMensajeCorreo = false;
-
-    }else if (regexCorreo.test(this.correo)) {
-      // El correo electrónico es válido, ocultar el mensaje de validación
-      this.mostrarMensajeCorreo = false;
-      this.correoValido = true; // El correo es válido
+    if (regexNombre.test(this.nombre)) {
+      this.mostrarMensajeNombre = false;
     } else {
-      // El correo electrónico no es válido, mostrar el mensaje de validación
-      this.mostrarMensajeCorreo = true;
-      this.correoValido = false; // El correo no es válido
+      this.mostrarMensajeNombre = true;
+      setTimeout(() => {
+        this.mostrarMensajeNombre = false; // Oculta el mensaje después de 5 segundos
+      }, 2000);
     }
   }
 

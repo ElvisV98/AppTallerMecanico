@@ -100,3 +100,33 @@ p{
 ion-card {
     padding: 1rem;
 }
+
+
+
+.mensaje-validacion {
+    margin-top: 15px; /* Espaciado superior para separar del campo de entrada */
+  }
+  
+  .mensaje-error {
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    background-color: #f8d7da; /* Color de fondo para mensajes de error */
+    border: 1px solid #721c24; /* Borde para mensajes de error */
+    padding: 1px; /* Espaciado interno para mensajes de error */
+    border-radius: 5px;
+    margin-bottom: 5PX; /* Borde redondeado para mensajes de error */
+  }
+  
+  .mensaje-icon {
+    color: #721c24; /* Color del icono de error */
+    font-size: 24px; /* Tamaño del icono de error */
+    margin-right: 8px; /* Espaciado derecho para separar el icono del texto */
+  }
+  
+  .mensaje-texto {
+    color: #721c24; /* Color del texto de error */
+    margin: 0;
+    font-size: 10PX; /* Elimina el margen del texto de error */
+  }
+  
+  

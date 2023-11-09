@@ -37,6 +37,11 @@ export class ProductDetailPage implements OnInit {
 
   };
 
+getImageUrl(nombreImagen: string): string {
+  return `assets/images/${nombreImagen}`;
+}
+
+
   // Injectamos Librerías a utilizar
   constructor(
     public restApi: ProductServiceService

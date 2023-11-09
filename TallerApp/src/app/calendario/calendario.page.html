@@ -11,7 +11,51 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-datetime>
-    <span slot="title">Seleccionar reservaciones</span>
-  </ion-datetime>
+  <ion-card>
+    <ion-card-content class="contenedor">
+      <img src="assets/img/icono_producto.png" alt="Logo" class="estilo-imagen">
+      <div class="texto">
+        <ion-card-title>Productos</ion-card-title>
+        <p>
+          Revisa los diversos servicios que fueron agendados, ya sea como grua,
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- calendario.page.html -->
+
+<ion-datetime presentation="date" [highlightedDates]="highlightedDates" (ionChange)="onDateClick($event)"></ion-datetime>
+<ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          
+          <ion-buttons slot="start">
+            <ion-button color="light" (click)="modal.dismiss()">Reservar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-icon name="caret-forward-circle-sharp" slot="start"></ion-icon>             
+            <ion-input label="Nombre:" placeholder=""></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="caret-forward-circle-sharp" slot="start"></ion-icon>             
+            <ion-input label="Apellido:" placeholder=""></ion-input>
+          </ion-item>
+
+         <ion-item>
+            <ion-icon name="caret-forward-circle-sharp" slot="start"></ion-icon>             
+            <ion-input label="Telefono:" type="number" placeholder="+569"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
 </ion-content>

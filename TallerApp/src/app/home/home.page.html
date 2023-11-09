@@ -58,7 +58,8 @@
       En esta seccion podras visualizar los eventos y reservas de este mes.
     </ion-card-content>
 
-    <ion-button (click)="presentAlert('Calendario')" fill="clear">Ir a calendario</ion-button>
+    <!--<ion-button (click)="presentAlert('Calendario')" fill="clear">Ir a calendario</ion-button>//-->
+    <ion-button class="boton-registrarse" [routerLink]="['/tabs/calendario']"  fill="clear" >Ir a Calendario</ion-button>
   </ion-card>
 
   <!-- Usuarios -->
