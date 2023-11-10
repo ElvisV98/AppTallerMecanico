@@ -40,23 +40,21 @@ export class ProductListPage implements OnInit {
     // Muestra el Wait
     await loading.present();
     
-    console.log("Entrando :");
-    // Obtiene el Observable del servicio
     await this.restApi.getProducts()
-      .subscribe({
-        next: (res) => { 
-          console.log("Res:" + res);
-  // Si funciona asigno el resultado al arreglo productos
-          this.productos = res;
-          console.log("thisProductos:",this.productos);
-          loading.dismiss();
-        }
-        , complete: () => { }
-        , error: (err) => {
-  // Si da error, imprimo en consola.
-          console.log("Err:" + err);
-          loading.dismiss();
-        }
-      })
-  }
+  .subscribe({
+    next: (res) => {
+      console.log("Entrando :");
+      // Filtra los productos antes de asignarlos a this.productos
+      this.productos = res.filter(producto => producto.codigo === '09-G13');
+      console.log("thisProductos:", this.productos);
+      loading.dismiss();
+    },
+    complete: () => { },
+    error: (err) => {
+      console.log("Err:" + err);
+      loading.dismiss();
+    }
+  });
+
+  }
 }

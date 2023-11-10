@@ -33,4 +33,62 @@ ion-datetime{
   }
 
 
+
+
+.boton-registrarse{
+
+  color: white;
+  background-color: red;
+}
+
+.boton-registrarse {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.boton-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono {
+  font-size: 1.5em;
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+ion-card {
+  max-width: 250px; /* Cambia el valor según tus preferencias */
+  margin: auto; /* Centra el card en la pantalla */
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
