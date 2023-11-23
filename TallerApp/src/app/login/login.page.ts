@@ -74,22 +74,12 @@ export class LoginPage implements OnInit {
       buttons: [
         {
           text: 'Cerrar',
-          role: 'cancel',
+          role: 'cancelar',
         },
       ],
     });
     toast.present();
   }
-
-  async register() {
-    const registered = await this.authService.register(this.nombre, this.contrasena);
-    if (registered) {
-      console.log('Usuario registrado correctamente', this.nombre);
-    } else {
-      console.log('Error al registrar el usuario');
-    }
-  }
-
 
 
 

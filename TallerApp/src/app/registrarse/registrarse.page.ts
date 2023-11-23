@@ -36,7 +36,7 @@ export class RegistrarsePage implements OnInit {
     if (registered) {
       console.log('Usuario registrado correctamente', this.nombre);
       // Aquí puedes redirigir al usuario a la página principal después del registro
-      this.navCtrl.navigateRoot(['/home']);
+      this.navCtrl.navigateRoot(['/tabs/home']);
     } else {
       console.log('Error al registrar el usuario');
     }
