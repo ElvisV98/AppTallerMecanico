@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -21,10 +24,27 @@ export class RegistrarsePage implements OnInit {
   apellidoValido: boolean = false; // Agregado para el apellido
   
 
-  constructor() { }
+  constructor(private authService: AuthService, private navCtrl: NavController, private storage: Storage) { }
 
   ngOnInit() {
   }
+
+
+
+  async register() {
+    const registered = await this.authService.register(this.nombre, this.contrasena);
+    if (registered) {
+      console.log('Usuario registrado correctamente', this.nombre);
+      // Aquí puedes redirigir al usuario a la página principal después del registro
+      this.navCtrl.navigateRoot(['/home']);
+    } else {
+      console.log('Error al registrar el usuario');
+    }
+  }
+
+
+
+
 
   validarContrasena() {
     if (this.contrasena === '') {
@@ -60,7 +80,7 @@ export class RegistrarsePage implements OnInit {
       this.correoValido = true;
       setTimeout(() => {
         this.mostrarMensajeCorreo = false;
-      }, 1000); // El correo es válido
+      }, 3000); // El correo es válido
     } else {
       // El correo electrónico no es válido, mostrar el mensaje de validación
       this.mostrarMensajeCorreo = true;
@@ -80,7 +100,7 @@ export class RegistrarsePage implements OnInit {
       this.mostrarMensajeNombre = true;
       setTimeout(() => {
         this.mostrarMensajeNombre = false; // Oculta el mensaje después de 5 segundos
-      }, 2000);
+      }, 3000);
     }
   }
 
@@ -96,7 +116,7 @@ export class RegistrarsePage implements OnInit {
       this.mostrarMensajeApellido = true;
       setTimeout(() => {
         this.mostrarMensajeApellido = false;
-      }, 2000);
+      }, 3000);
     }
   }
 

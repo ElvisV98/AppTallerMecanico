@@ -3,6 +3,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { AuthService } from '../auth.service';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +27,7 @@ export class LoginPage implements OnInit {
   nombre: string = ''; // Agregado para el nombre
   mostrarMensajeNombre: boolean = false; // Agregado para el nombre
   
-  constructor(private router: Router, private animationCtrl: AnimationController) { }
+  constructor(private router: Router, private animationCtrl: AnimationController,private authService: AuthService,private navCtrl: NavController, private storage: Storage,private toastController: ToastController ) { }
 
   ngOnInit(): void {
   }
@@ -46,6 +49,52 @@ export class LoginPage implements OnInit {
   stop() {
     this.animation.stop();
   }
+
+
+
+
+
+  async login() {
+    const loggedIn = await this.authService.login(this.nombre, this.contrasena);
+    if (loggedIn) {
+      // Aquí puedes redirigir al usuario a la página principal después del inicio de sesión
+      this.router.navigate(['/tabs/home']);
+    } else {
+      this.presentToast('Usuario no creado. Regístrate primero.');
+      console.log('Credenciales incorrectas');
+    }
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000, // Duración del toast en milisegundos
+      position: 'top', // Posición del toast (puedes cambiar a 'bottom' o 'middle')
+      color: 'danger', // Color del toast (puedes personalizarlo)
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'cancel',
+        },
+      ],
+    });
+    toast.present();
+  }
+
+  async register() {
+    const registered = await this.authService.register(this.nombre, this.contrasena);
+    if (registered) {
+      console.log('Usuario registrado correctamente', this.nombre);
+    } else {
+      console.log('Error al registrar el usuario');
+    }
+  }
+
+
+
+
+
+
 
   validarContrasena() {
     if (this.contrasena === '') {
@@ -78,12 +127,7 @@ export class LoginPage implements OnInit {
         this.mostrarMensajeNombre = false; // Oculta el mensaje después de 5 segundos
       }, 2000);
     }
-  }
-
-
-
-
-  
+  } 
 }
 
 
