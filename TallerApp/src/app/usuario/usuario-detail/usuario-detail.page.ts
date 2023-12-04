@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
 // Import a utilizar 
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { ClUsuario } from '../model/ClUsuario';
 import { UsuarioServiceService } from '../usuario.service';
+
 
 
 @Component({

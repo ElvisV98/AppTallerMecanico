@@ -1,15 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UsuarioAllPage } from './usuario-all.page';
+import { IonicModule } from '@ionic/angular';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('UsuarioAllPage', () => {
   let component: UsuarioAllPage;
   let fixture: ComponentFixture<UsuarioAllPage>;
 
-  beforeEach(async(() => {
+  beforeEach(async() => {
+    await TestBed.configureTestingModule({
+      declarations: [UsuarioAllPage],
+      imports: [IonicModule.forRoot(),HttpClientTestingModule]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(UsuarioAllPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

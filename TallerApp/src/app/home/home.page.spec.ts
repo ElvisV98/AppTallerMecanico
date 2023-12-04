@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { Component } from '@angular/core';
-
 import { HomePage } from './home.page';
 
 describe('HomePage', () => {
@@ -23,10 +21,3 @@ describe('HomePage', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-@Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-})
-export class HomePageComponent {}

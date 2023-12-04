@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 declare var google : any;
 
-
 /// crear una carpeta y luego importar para buena practica 
 interface Marker {
   position: {
