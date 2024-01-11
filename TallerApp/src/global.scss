@@ -28,3 +28,44 @@
 
 
 @import "./assets/iconos/fonts.css";
+
+ion-button {
+    text-transform: none;
+}
+
+ion-content {
+    --background: #fafafa;
+}
+
+//TODO: CUSTOM
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.auth-form {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.custom-input {
+    --border-color: #e0e0e0;
+    --border-radius: 15px;
+    --border-style: solid;
+    --border-width: 1px;
+    margin: 20px 0;
+
+    ion-label {
+        position: relative;
+        bottom: 2px;
+    }
+
+    .eye-icon {
+        position: relative;
+        top: 13px;
+    }
+}

@@ -8,8 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'auth',
     pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
     path: 'login',
@@ -107,11 +111,11 @@ const routes: Routes = [
     path: 'localizacion',
     loadChildren: () => import('./localizacion/localizacion.module').then( m => m.LocalizacionPageModule)
   },
-
   {
     path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
+
  
 
 ];
