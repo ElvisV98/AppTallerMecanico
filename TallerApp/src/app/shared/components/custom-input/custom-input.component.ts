@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-custom-input',
@@ -7,15 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomInputComponent  implements OnInit {
 
+  @Input() control!: FormControl;
   @Input() type! : string;
   @Input() label! : string;
   @Input() placeholder! : string;
   @Input() icon! : string;
 
-
   isPassword!: boolean;
   hide: boolean = true;
-
 
   constructor() { }
 

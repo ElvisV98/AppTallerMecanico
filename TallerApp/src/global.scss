@@ -41,9 +41,14 @@ ion-content {
 
 .d-flex-center {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
 
+.validators {
+    color: var(--ion-color-danger);
+    font-size: 13px;
+    text-align: center;
 }
 
 .auth-form {
@@ -69,3 +74,5 @@ ion-content {
         top: 13px;
     }
 }
+
+

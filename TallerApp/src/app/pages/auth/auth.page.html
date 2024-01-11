@@ -2,13 +2,18 @@
 
 <ion-content>
     <div class="d-flex-center">
-        <form class="auth-form">
+        <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
             <app-custom-input
                 icon="mail-outline"
                 label="Email"
                 placeholder="Ingrese su correo..."
-                type="email">
+                type="email"
+                [control]="form.controls.email">
             </app-custom-input>
+            <div class="validators" *ngIf="form.controls.email.errors">
+                <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
+                <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
+            </div>
 
             <app-custom-input
                 label="Contraseña"
@@ -16,6 +21,9 @@
                 type="password"
                 icon="lock-closed-outline">
             </app-custom-input>
+            <div class="validators" *ngIf="form.controls.password.errors">
+                <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
+            </div>
 
             <a class="custom-link">
                 <p routerLink="forgot-password">¿Olvido su contraseña?</p>
