@@ -15,8 +15,6 @@ export class CalendarioPage implements OnInit {
   ngOnInit() {
   }
 
-<<<<<<< HEAD:TallerApp/src/app/pages/main/calendario/calendario.page.ts
-=======
   highlightedDates = (isoString: string | number | Date) => {
     const date = new Date(isoString);
     const isoDate = date.toISOString().slice(0, 10); // Obtiene la fecha en formato ISO
@@ -48,6 +46,5 @@ export class CalendarioPage implements OnInit {
       }
     }
   }
->>>>>>> master:TallerApp/src/app/calendario/calendario.page.ts
 }
 

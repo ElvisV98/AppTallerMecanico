@@ -14,11 +14,7 @@ export class ProductAllPage implements OnInit {
   buttonLeerDisabled = false
   buttonActualizarDisabled = false
   buttonCrearDisabled = false
-<<<<<<< HEAD
-  producto: ClProducto = { idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento: new Date(),rut:null,dv:"",enfermedad:"",fonocontacto: 0, categoria: "",editorial:"",raza:"",edad:0,altura:0,hrini:"",hrfin:"",direccion:"",fCreacion:new Date() };;
-=======
-  producto: ClProducto = {idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
->>>>>>> master
+  producto: ClProducto = {idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:new Date(),rut: null,dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:new Date()};
 
 formSubmitted = false;  
 mostrarMensajeId: boolean = false;
@@ -72,11 +68,7 @@ mostrarMensajeCantidad: boolean = false;
       this.productservice.deleteProduct(this.producto.idProducto).subscribe(
         () => {
           // Limpiar los campos y deshabilitar botones
-<<<<<<< HEAD
-          this.producto = { idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento: new Date(),rut:null,dv:"",enfermedad:"",fonocontacto: 0, categoria: "",editorial:"",raza:"",edad:0,altura:0,hrini:"",hrfin:"",direccion:"",fCreacion:new Date() };
-=======
-          this.producto = { idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:'',rut: '',dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:''};
->>>>>>> master
+          this.producto = { idProducto: 0,codigo:'', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento:new Date(),rut: null,dv: '',enfermedad: '',fonocontacto: 0,categoria: '' ,editorial: '',raza: '',edad: 0,altura: 0,hrini: '',hrfin: '',direccion: '',fCreacion:new Date()};
           this.buttonCrearDisabled = false;
           this.buttonActualizarDisabled = true;
           this.buttonEliminarDisabled = true;

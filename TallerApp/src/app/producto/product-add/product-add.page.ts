@@ -7,7 +7,7 @@ import { ProductServiceService } from '../product-service.service';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import {CameraSource } from '@capacitor/camera/dist/esm/definitions';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Filesystem, Directory } from '@capacitor/filesystem';
+// import { Filesystem, Directory } from '@capacitor/filesystem';
 
 
 @Component({
@@ -67,33 +67,22 @@ customCounterFormatter(inputLength: number, maxLength: number) {
 
    
     this.productForm = this.formBuilder.group({
-<<<<<<< HEAD
-      "prod_nombre": [null, Validators.required],
-      "prod_codigo": [null, Validators.required],
-      'prod_precio': [null, Validators.required],
-      'prod_cantidad': [null, Validators.required]
-=======
       "nombreprod": [null, Validators.required],
       "codigo": [null, Validators.required],
       'precio': [null, Validators.required],
       'Cantidad': [null, Validators.required],
       'editorial': [null, Validators.required]
->>>>>>> master
     });
   }
   // se ejecutará cuando presione el Submit
   async onFormSubmit(form: NgForm) {
 
-<<<<<<< HEAD
-    // Creamos un Loading Controller, Ojo no lo muestra
-=======
     
     
   console.log("onFormSubmit del Product ADD")
   console.log("Contenido de this.producto:", this.producto);
 
 
->>>>>>> master
     const loading = await this.loadingController.create({
       message: 'Loading...'
     });

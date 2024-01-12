@@ -38,12 +38,7 @@ export class ProductListPage implements OnInit {
     });
     // Muestra el Wait
     await loading.present();
-<<<<<<< HEAD
-    console.log("Entrando :");
-    // Obtiene el Observable del servicio
-=======
     
->>>>>>> master
     await this.restApi.getProducts()
   .subscribe({
     next: (res) => {

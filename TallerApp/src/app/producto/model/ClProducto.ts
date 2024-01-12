@@ -57,7 +57,7 @@ export class ClProducto {
   hrini: string;
   hrfin: string;
   direccion: string;
-  fCreacion: string;
+  fCreacion: Date;
 
 
   

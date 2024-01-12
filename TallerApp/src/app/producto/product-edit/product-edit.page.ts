@@ -16,18 +16,14 @@ import { ProductServiceService } from '../product-service.service';
 export class ProductEditPage implements OnInit {
   // FormGroup para validaciones
   productForm!: FormGroup;
-<<<<<<< HEAD
-  // Esquema a utilizar en el Html
-  producto: ClProducto = { idProducto: 0,codigo:'09-G13', nombreprod: '', precio: 0,cantidad:0,fechaNacimiento: new Date(),rut:null,dv:"",enfermedad:"",fonocontacto: 0, categoria: "",editorial:"",raza:"",edad:0,altura:0,hrini:"",hrfin:"",direccion:"",fCreacion:new Date() };
-=======
   producto: ClProducto = {
   idProducto: 0
   ,codigo:'09-G13'
   , nombreprod: ''
   , precio: 1
   , cantidad: 1
-  ,fechaNacimiento: ''
-  ,rut: '0'
+  ,fechaNacimiento: new Date()
+  ,rut: null
   ,dv: '0'
   ,enfermedad: '0'
   ,fonocontacto: 0
@@ -39,12 +35,11 @@ export class ProductEditPage implements OnInit {
   ,hrini: '0'
   ,hrfin: '0'
   ,direccion: '0'
-  ,fCreacion: ''
+  ,fCreacion: new Date
   
 
   };
  
->>>>>>> master
   id: any = '';
   //prod_name: string = '';
   //prod_desc: string = '';
@@ -60,16 +55,6 @@ export class ProductEditPage implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    console.log("ngOnInit ID:" + this.route.snapshot.params['id']);
-    // Relizamos lectura
-    this.getProduct(this.route.snapshot.params['id']);
-    // Especificamos Validaciones por medio de FormGroup
-    this.productForm = this.formBuilder.group({
-      'prod_name': [null, Validators.required],
-      'prod_price': [null, Validators.required],
-      'prod_cantidad': [null, Validators.required]
-=======
     console.log("ngOnInit ID:" + this.route.snapshot.params['id']); 
     this.getProduct(this.route.snapshot.params['id']);
     this.productForm = this.formBuilder.group({
@@ -78,7 +63,6 @@ export class ProductEditPage implements OnInit {
       'Cantidad': [null, Validators.required],
       'editorial': [null, Validators.required]
 
->>>>>>> master
     });
   }
 
@@ -124,16 +108,10 @@ export class ProductEditPage implements OnInit {
             console.log(data);            
             this.id = data.idProducto;           
             this.productForm.setValue({
-<<<<<<< HEAD
-              prod_name: data.nombreprod,
-              prod_price: data.precio,
-              prod_cantidad: data.cantidad
-=======
               nombreprod: data.nombreprod,
               precio: data.precio,
               Cantidad: data.cantidad,
               editorial: data.editorial
->>>>>>> master
             });
             loading.dismiss();
           }

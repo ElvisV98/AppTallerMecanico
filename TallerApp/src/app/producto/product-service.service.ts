@@ -42,11 +42,7 @@ export class ProductServiceService {
 
   // Obtenemos todos los Productos
   getProducts(): Observable<ClProducto[]> {
-<<<<<<< HEAD
-    console.log("getProducts ()");
-=======
     
->>>>>>> master
     return this.http.get<ClProducto[]>(apiUrl)
       .pipe(
         tap(heroes => console.log('fetched products')),
@@ -102,10 +98,7 @@ export class ProductServiceService {
   }
   
   
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 }
 
