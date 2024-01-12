@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AutoPageRoutingModule } from './auto-routing.module';
+import { AdminPageRoutingModule } from './admin-routing.module';
 
-import { AutoPage } from './auto.page';
+import { AdminPage } from './admin.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AutoPageRoutingModule
+    AdminPageRoutingModule
   ],
-  declarations: [AutoPage]
+  declarations: [AdminPage]
 })
-export class AutoPageModule {}
+export class AdminPageModule {}
