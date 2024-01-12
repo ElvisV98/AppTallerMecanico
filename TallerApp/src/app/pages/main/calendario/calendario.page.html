@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>calendario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="CALENDARIO"></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calendario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="d-flex-cener p-2">
+
+    <!-- calendario.page.html -->
+
+    <ion-datetime presentation="date" [highlightedDates]="highlightedDates" (ionChange)="onDateClick($event)"></ion-datetime>
+  
+        <ion-button 
+          class="ion-margin.top" 
+          [routerLink]="['/localizacion']" 
+          expand="block"
+          mode="ios">
+            Conoce tu Ubicacion
+            <ion-icon name="map-sharp" slot="end"></ion-icon>
+        </ion-button>
+            
+        <ion-button 
+          class="ion-margin-top" 
+          [routerLink]="['/map']"
+          expand="block"
+          mode="ios">¿Cómo llegar?
+          
+            
+            <ion-icon name="location-sharp" slot="end"></ion-icon>
+        </ion-button>
+      
+  </div>
+      
+
 </ion-content>
