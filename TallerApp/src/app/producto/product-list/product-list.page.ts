@@ -26,7 +26,10 @@ export class ProductListPage implements OnInit {
     this.getProducts();
   }
 
+  
+
   // Método  que rescta los productos
+  
   async getProducts() {
     console.log("Entrando :getProducts");
     // Crea un Wait (Esperar)
@@ -35,30 +38,27 @@ export class ProductListPage implements OnInit {
     });
     // Muestra el Wait
     await loading.present();
+<<<<<<< HEAD
     console.log("Entrando :");
     // Obtiene el Observable del servicio
+=======
+    
+>>>>>>> master
     await this.restApi.getProducts()
-      .subscribe({
-        next: (res) => { 
-          console.log("Res:" + res);
-  // Si funciona asigno el resultado al arreglo productos
-          this.productos = res;
-          console.log("thisProductos:",this.productos);
-          loading.dismiss();
-        }
-        , complete: () => { }
-        , error: (err) => {
-  // Si da error, imprimo en consola.
-          console.log("Err:" + err);
-          loading.dismiss();
-        }
-      })
-  }
+  .subscribe({
+    next: (res) => {
+      console.log("Entrando :");
+      // Filtra los productos antes de asignarlos a this.productos
+      this.productos = res.filter(producto => producto.codigo === '09-G13');
+      console.log("thisProductos:", this.productos);
+      loading.dismiss();
+    },
+    complete: () => { },
+    error: (err) => {
+      console.log("Err:" + err);
+      loading.dismiss();
+    }
+  });
 
-
-  
-  // drop(event: CdkDragDrop<string[]>) {
-  //   console.log("Moviendo Item Array Drop ***************:");
-  //   moveItemInArray(this.productos, event.previousIndex, event.currentIndex);
-  // }
+  }
 }

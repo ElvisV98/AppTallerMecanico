@@ -25,9 +25,15 @@ export class ProductDetailPage implements OnInit {
     ,dv: ""
     ,enfermedad: ""
     ,fonocontacto: 0
+<<<<<<< HEAD
     ,categoria: ""
     ,editorial: ""
     ,raza: ""
+=======
+    ,categoria: '0'
+    ,editorial: ''
+    ,raza: '0'
+>>>>>>> master
     ,edad: 0
     ,altura: 0
     ,hrini: ""
@@ -35,6 +41,11 @@ export class ProductDetailPage implements OnInit {
     ,direccion: ""
     ,fCreacion: new Date()
   };
+
+getImageUrl(nombreImagen: string): string {
+  return `assets/images/${nombreImagen}`;
+}
+
 
   // Injectamos Librerías a utilizar
   constructor(

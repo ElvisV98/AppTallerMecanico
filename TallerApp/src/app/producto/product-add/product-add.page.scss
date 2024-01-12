@@ -1,0 +1,22 @@
+.icono-agregar {
+    font-size: 200px; /* Tamaño del icono */
+    margin: 0 auto; /* Centra horizontalmente el icono */
+    display: block; /* Establece el icono como un bloque para centrarlo horizontalmente */
+  }
+  
+
+  .block {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ion-modal {
+    --height: auto;
+  }
+
+  ion-card {
+    margin-bottom: 20px; /* Ajusta el valor según el espacio que desees entre las tarjetas */
+  }

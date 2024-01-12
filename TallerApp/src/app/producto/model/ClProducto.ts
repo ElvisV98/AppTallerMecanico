@@ -57,7 +57,9 @@ export class ClProducto {
   hrini: string;
   hrfin: string;
   direccion: string;
-  fCreacion: Date;
+  fCreacion: string;
+
+
   
   
   // si no Inicializo los valores, da Error
@@ -82,5 +84,5 @@ export class ClProducto {
         this.direccion = obj && obj.direccion || null
         this.fCreacion = obj && obj.fCreacion || null
        
-    }
+}
 }

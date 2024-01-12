@@ -31,6 +31,11 @@
       <ion-label position="floating">Cantidad</ion-label>
       <ion-input type="number" [(ngModel)]="producto.cantidad" formControlName="prod_cantidad"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción del Producto</ion-label>
+      <ion-input type="text" [(ngModel)]="producto.editorial" formControlName="editorial"></ion-input>
+    </ion-item>
     
     <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!productForm.valid">Submit</ion-button>
   </form>
