@@ -20,8 +20,21 @@ const routes: Routes = [
         path: 'product',
         loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
       },
+      {
+        path: 'taller',
+        loadChildren: () => import('./taller/taller.module').then( m => m.TallerPageModule)
+      },
+      {
+        path: 'calendary',
+        loadChildren: () => import('./calendary/calendary.module').then( m => m.CalendaryPageModule)
+      },
+      {
+        path: 'auto',
+        loadChildren: () => import('./auto/auto.module').then( m => m.AutoPageModule)
+      },
     ],
   },
+  
 ];
 
 @NgModule({
