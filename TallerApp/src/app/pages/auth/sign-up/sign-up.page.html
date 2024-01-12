@@ -1,13 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header subtitle="A D M I N" backButton="/auth">
+</app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">sign-up</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="d-flex-center">
+    <form [formGroup]="form" class="auth-form">
+
+      <app-custom-input 
+        icon="person-outline"
+        label="Nombre"
+        placeholder="Ingrese su nombre"
+        type="text"
+        [control]="form.controls.name">
+      </app-custom-input>
+
+      <app-custom-input
+        icon="mail-outline"
+        label="Email"
+        placeholder="Ingrese su correo..."
+        type="email"
+        [control]="form.controls.email">
+      </app-custom-input>
+
+      <app-custom-input
+        label="Contraseña"
+        placeholder="Ingrese su contraseña..."
+        type="password"
+        icon="lock-closed-outline"
+        [control]="form.controls.password">
+      </app-custom-input>
+
+      <ion-button expand="block" mode="ios" class="submit" type="submit">
+        Registrate
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+    </form>
+  </div>
 </ion-content>

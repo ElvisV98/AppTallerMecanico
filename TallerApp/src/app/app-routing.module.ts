@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
     path: 'recuperar-password',
     loadChildren: () => import('./recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
   },
