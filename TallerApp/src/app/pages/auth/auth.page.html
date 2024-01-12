@@ -19,7 +19,8 @@
                 label="Contraseña"
                 placeholder="Ingrese su contraseña..."
                 type="password"
-                icon="lock-closed-outline">
+                icon="lock-closed-outline"
+                [control]="form.controls.password">
             </app-custom-input>
             <div class="validators" *ngIf="form.controls.password.errors">
                 <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
@@ -34,7 +35,7 @@
                 mode="ios" 
                 class="submit" 
                 type="submit"
-                routerLink="/main/home">Ingresar
+                [disabled]="form.invalid">Ingresar
                 
                 
                 <ion-icon 

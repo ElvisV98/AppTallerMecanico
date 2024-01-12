@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,11 +8,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
-
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
+
+  utilsSvc = inject(UtilsService);
 
   constructor() { }
 
@@ -21,7 +23,7 @@ export class AuthPage implements OnInit {
   async submit() {
     if(this.form.valid) {
       const user = this.form.value.email;
-      console.log(user)
+      this.utilsSvc.routerLink('/main/home'); 
     }
   }
 

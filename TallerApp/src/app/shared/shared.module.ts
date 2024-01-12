@@ -8,12 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IonicModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
   declarations: [
     HeaderComponent,
     CustomInputComponent
@@ -22,6 +16,12 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent,
     CustomInputComponent,
     ReactiveFormsModule
+  ],
+  imports: [
+    CommonModule,
+    IonicModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
   
 })
