@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MainPageRoutingModule } from './main-routing.module';
 
 import { MainPage } from './main.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MainPage } from './main.page';
     FormsModule,
     IonicModule,
     MainPageRoutingModule,
+    SharedModule
   ],
   declarations: [MainPage]
 })

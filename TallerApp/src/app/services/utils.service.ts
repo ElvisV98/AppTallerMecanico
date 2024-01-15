@@ -1,6 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingController, ModalController, ModalOptions, ToastController, ToastOptions } from '@ionic/angular';
+import { LoadingController} from '@ionic/angular';
+import { ToastController, ToastOptions } from '@ionic/angular';
+import { ModalController, ModalOptions } from '@ionic/angular';
+import { MenuController, MenuCustomEvent } from '@ionic/angular';
+import { AlertController, AlertOptions } from '@ionic/angular';
+
 
 
 @Injectable({
@@ -8,10 +13,13 @@ import { LoadingController, ModalController, ModalOptions, ToastController, Toas
 })
 export class UtilsService {
 
+  router = inject(Router);
   loadingCtrl = inject(LoadingController);
   toastCtrl = inject(ToastController);
   modalCtrl = inject(ModalController);
-  router = inject(Router);
+  menuCtrl = inject(MenuController);
+  alertCtrl = inject(AlertController);
+  
 
   loading(){
     return this.loadingCtrl.create({ spinner: 'crescent' });
@@ -20,6 +28,12 @@ export class UtilsService {
   async presentToast(opts?: ToastOptions){
     const toast = await this.toastCtrl.create(opts);
     toast.present();
+  }
+
+  // Alert
+  async presentAlert(opts: AlertOptions) {
+    const alert = await this.alertCtrl.create(opts);
+    await alert.present();
   }
 
   // Permite crear modales
@@ -43,8 +57,17 @@ export class UtilsService {
     return localStorage.getItem(key);
   }
 
+  removeElementInLocalStorage(key: string) {
+    localStorage.removeItem(key);
+  }
+
   //Redericciona a otras paginas
   routerLink(url: string){
     return this.router.navigateByUrl(url);
   }
+
+  // async presentMenu(opts: MenuCustomEvent) {
+  //   const menu = await this.menuCtrl.open();
+  // }
+
 }

@@ -2,6 +2,7 @@
 <ion-content>
 
     <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
+        
         <ion-avatar class="ion-avatar" *ngIf="form.value.image">
             <img [src]="form.value.image" />
         </ion-avatar>

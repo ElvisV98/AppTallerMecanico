@@ -3,7 +3,7 @@
 
 <ion-content>
   <div class="d-flex-center">
-    <form [formGroup]="form" class="auth-form">
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
 
       <app-custom-input 
         icon="person-outline"
@@ -29,7 +29,7 @@
         [control]="form.controls.password">
       </app-custom-input>
 
-      <ion-button expand="block" mode="ios" class="submit" type="submit">
+      <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
         Registrate
         <ion-icon slot="end" name="log-in-outline"></ion-icon>
       </ion-button>

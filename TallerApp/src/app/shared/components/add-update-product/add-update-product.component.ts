@@ -14,7 +14,7 @@ export class AddUpdateProductComponent  implements OnInit {
 
   form = new FormGroup({
     id: new FormControl(''),
-    image: new FormControl('', [Validators.required]),
+    image: new FormControl(''),
     name: new FormControl('', [Validators.required, Validators.minLength(6)]),
     price: new FormControl(0, [Validators.required, Validators.min(0)]),
     soldUnits: new FormControl(0, [Validators.required, Validators.min(0)])
@@ -38,17 +38,38 @@ export class AddUpdateProductComponent  implements OnInit {
   }
 
   submit() {
+    console.log(this.form.valid);
     if(this.form.valid){
+
       if(this.product){
         this.utilsSvc.dismissModal({ succes: true});
         this.utilsSvc.presentToast({
           message: "producto actualizado exitosamente",
           duration: 1500,
           color: "success",
-          position: "middle",
+          position: "bottom",
+          icon: "checkmark-circle-outline"
+        })
+      } else {
+        this.utilsSvc.dismissModal({ succes: true});
+        this.utilsSvc.presentToast({
+          message: "producto agregado exitosamente",
+          duration: 1500,
+          color: "success",
+          position: "bottom",
           icon: "checkmark-circle-outline"
         })
       }
+
+    } else {
+      this.utilsSvc.presentToast({
+        message: "Formulario invalido",
+        duration: 1500,
+        color: "danger",
+        position: "bottom",
+        icon: "close-circle-outline"
+      })
+
     }
   }
 

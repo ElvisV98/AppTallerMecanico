@@ -1,0 +1,25 @@
+.profile-menu {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-profile {
+    padding-top: 15px;
+    font-size: 80px;
+}
+
+.name-profile {
+    padding-top: 10px
+}
+
+.menu-options {
+    padding-top: 1rem;
+}
+
+.exit-button {
+    padding: 1rem;
+    margin: 5px;
+}

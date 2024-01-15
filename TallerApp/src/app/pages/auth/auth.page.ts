@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Input, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UtilsService } from 'src/app/services/utils.service';
 
@@ -7,7 +7,11 @@ import { UtilsService } from 'src/app/services/utils.service';
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
 })
+
 export class AuthPage implements OnInit {
+  
+  
+  
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
