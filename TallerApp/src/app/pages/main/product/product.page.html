@@ -2,34 +2,66 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item-sliding class="product-item" *ngFor="let p of products">
-      <ion-item>
+  <div class="product-list">
+    <ion-item-sliding class="product-item" *ngFor="let p of products" mode="ios">
+    
+      <ion-item [button]="true" detail="false" >
+        
+        <!-- Imagen del producto-->
         <ion-avatar slot="start">
           <img [src]=p.image referrerPolicy="no-referrer"/>
         </ion-avatar>
-        <ion-label> 
-          <div class="name">{{p.name}}</div>
-          <div class="data">
-            <strong>Precio: </strong>{{p.price | currency: 'CLP'}}<br>
-            <strong>Unidad Vendidas: </strong>{{p.soldUnits}}
+
+        <!-- Texto izquierda -->
+        <ion-label>
+          <ion-note class="brand">{{p.brand}}</ion-note>
+          <strong class="name">{{p.name}}</strong>
+          <ion-note class="description">{{p.description}}</ion-note>
+          
+          <div class="control-cantidad">
+            
+            <ion-button fill="clear" (click)="dissProduct(p)"> 
+              <div class="circle">
+                <ion-icon name="remove"></ion-icon>
+              </div>
+            </ion-button>
+
+            <div class="circle-cantidad">
+              <ion-note color="dark">{{p.cant}}</ion-note>
+            </div>
+            
+            <ion-button fill="clear" (click)="aumProduct(p)">
+              <div class="circle">
+                <ion-icon name="add"></ion-icon>
+              </div>
+            </ion-button>
           </div>
-          <ion-chip color="primary" mode="ios" outline="true">
-            <ion-label>Ganancia: {{p.price * p.soldUnits | currency: 'CLP'}}</ion-label>
-          </ion-chip>
         </ion-label>
+
+
+        <!-- Texto derecha -->
+        <div class="metadata-top-end-wrapper" slot="end" (click)="addUpdateProduct()">
+          <ion-icon color="success" name="ellipse"></ion-icon>
+          <ion-note color="success">{{p.state}}</ion-note>
+        </div>
+
+        <div class="metadata-bottom-end-wrapper" slot="end">
+          <ion-text>${{p.price}}</ion-text>
+        </div>
       </ion-item>
+
       <ion-item-options>
         <ion-item-option side="start">
           <ion-icon class="option-btn" name="create-outline" (click)="addUpdateProduct(p)"></ion-icon>
         </ion-item-option>
+        
         <ion-item-option color="danger" side="start">
           <ion-icon class="option-btn" name="trash-outline" (click)="deleteProduct(p.id)"></ion-icon>
         </ion-item-option>
+      
       </ion-item-options>
-
     </ion-item-sliding>
-  </ion-list>
+  </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addUpdateProduct()">

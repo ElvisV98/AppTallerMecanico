@@ -12,12 +12,18 @@ export class AddUpdateProductComponent  implements OnInit {
 
   @Input() product!: Product;
 
+
+
   form = new FormGroup({
     id: new FormControl(''),
     image: new FormControl(''),
     name: new FormControl('', [Validators.required, Validators.minLength(6)]),
     price: new FormControl(0, [Validators.required, Validators.min(0)]),
-    soldUnits: new FormControl(0, [Validators.required, Validators.min(0)])
+    description: new FormControl(''),
+    section: new FormControl(''),
+    brand: new FormControl(''),
+    cant: new FormControl(0),
+    state: new FormControl('')
   });
 
   utilsSvc = inject(UtilsService);

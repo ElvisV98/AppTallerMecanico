@@ -11,7 +11,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class HeaderComponent  implements OnInit {
   
   @Input() color : string = "warning";
-  @Input() title : string = "TASK ENGINE";
+  @Input() title : string = "MUSU APP";
   @Input() subtitle! : string;
   @Input() backButton!: string;
   @Input() isModal!: boolean;

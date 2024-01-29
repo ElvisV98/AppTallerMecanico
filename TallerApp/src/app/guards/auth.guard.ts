@@ -1,15 +1,19 @@
-import { Injectable } from '@angular/core';
+import { UtilsService } from './../services/utils.service';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router  } from '@angular/router';
 import { Observable, async } from 'rxjs';
-import { Storage } from '@ionic/storage-angular';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
+import { UtilsService } from '../services/utils.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private router: Router, private authservice: AuthService, private storage: Storage) {}
+  utilsSvc = inject(UtilsService);
+  authSvc = inject(AuthService);
+
+  constructor() {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -21,15 +25,12 @@ export class AuthGuard implements CanActivate {
     const isAuthenticated = true;//await this.storage.get('isLoggedIn') // Cambia esto a tu lógica de autenticación
   
     if (isAuthenticated) {
- 
+      
       return true; // Permitir acceso a la ruta
  
     } else {
  
-      // Redirigir al usuario a la página de inicio de sesión
- 
-      this.router.navigate(['/login']);
- 
+      this.utilsSvc.routerLink('/auth');
       return false;
  
     }

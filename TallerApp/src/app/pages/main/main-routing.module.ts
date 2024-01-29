@@ -28,12 +28,17 @@ const routes: Routes = [
         path: 'admin',
         loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
       },
-      {
-        path: 'profile',
-        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-      },
     ],
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./user-menu/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./user-menu/setting/setting.module').then( m => m.SettingPageModule)
+  },
+
   
 ];
 

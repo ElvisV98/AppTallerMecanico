@@ -1,11 +1,112 @@
 <app-header [isModal]="true" title="Agregar Producto"></app-header>
 <ion-content>
 
+  <ion-avatar class="ion-avatar" *ngIf="form.value.image">
+    <img [src]="form.value.image" />
+  </ion-avatar>
+
+
+  <ion-accordion-group mode="ios" expand="inset">
+    
+    <ion-accordion value="info-product">
+      <ion-item slot="header">
+        <div class="cont-header">
+          <strong class="brand">{{product.brand}}</strong>
+          <strong class="name">{{product.name}}</strong>
+          <ion-note class="section">Seccion: {{product.section}}</ion-note>
+          <strong class="price">${{product.price}}</strong>
+        </div>
+
+        <div class="metadata-top-end-wrapper" slot="end">
+          <ion-icon color="success" name="ellipse"></ion-icon>
+          <ion-note color="success">{{product.state}}</ion-note>
+        </div>
+        
+      </ion-item>
+      <div class="ion-padding" slot="content">{{product.description}}</div>
+    </ion-accordion>
+
+    <ion-accordion value="especification-product">
+
+      <ion-item slot="header" color="light">
+        <ion-label>Second Accordion</ion-label>
+      </ion-item>
+      
+      <div class="ion-padding" slot="content">Second Content</div>
+    </ion-accordion>
+
+  </ion-accordion-group>
+
+
+    
+    
+
+  
+
+  <div class="product-list">
+    <ion-item-sliding class="product-item" mode="ios">
+    
+      <ion-item [button]="true" detail="false" >
+        
+        <!-- Imagen del producto-->
+        <ion-avatar slot="start">
+          <img [src]=product.image referrerPolicy="no-referrer"/>
+        </ion-avatar>
+
+        <!-- Texto izquierda -->
+        <ion-label>
+          <ion-note class="brand">{{product.brand}}</ion-note>
+          <strong class="name">{{product.name}}</strong>
+          <ion-note class="description">{{product.description}}</ion-note>
+          
+          <div class="control-cantidad">
+            
+            <ion-button fill="clear"> 
+              <div class="circle">
+                <ion-icon name="remove"></ion-icon>
+              </div>
+            </ion-button>
+
+            <div class="circle-cantidad">
+              <ion-note color="dark">{{product.cant}}</ion-note>
+            </div>
+            
+            <ion-button fill="clear">
+              <div class="circle">
+                <ion-icon name="add"></ion-icon>
+              </div>
+            </ion-button>
+          </div>
+        </ion-label>
+
+
+        <!-- Texto derecha -->
+        <div class="metadata-top-end-wrapper" slot="end">
+          <ion-icon color="success" name="ellipse"></ion-icon>
+          <ion-note color="success">{{product.state}}</ion-note>
+        </div>
+
+        <div class="metadata-bottom-end-wrapper" slot="end">
+          <ion-text>${{product.price}}</ion-text>
+        </div>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option side="start">
+          <ion-icon class="option-btn" name="create-outline"></ion-icon>
+        </ion-item-option>
+        
+        <ion-item-option color="danger" side="start">
+          <ion-icon class="option-btn" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      
+      </ion-item-options>
+    </ion-item-sliding>
+  </div>
+
     <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
         
-        <ion-avatar class="ion-avatar" *ngIf="form.value.image">
-            <img [src]="form.value.image" />
-        </ion-avatar>
+        
 
         <ion-icon class="image-icon" *ngIf="!form.value.image" name="image-outline"></ion-icon>
 
@@ -28,10 +129,10 @@
           <div *ngIf="form.controls.price.errors?.['min']">El precio minimo debe ser 0.</div>
         </div>
 
-        <app-custom-input [control]="form.controls.soldUnits" type="number" label="Unidades vendidas"></app-custom-input>
-        <div class="validators" *ngIf="form.controls.soldUnits.errors && form.controls.soldUnits.touched">
-          <div *ngIf="form.controls.soldUnits.errors?.['required']">La cantidad vendida es requerido</div>
-          <div *ngIf="form.controls.soldUnits.errors?.['min']">El cantidad minima debe ser 0.</div>
+        <app-custom-input [control]="form.controls.description" type="number" label="Unidades vendidas"></app-custom-input>
+        <div class="validators" *ngIf="form.controls.description.errors && form.controls.description.touched">
+          <div *ngIf="form.controls.description.errors?.['required']">La cantidad vendida es requerido</div>
+          <div *ngIf="form.controls.description.errors?.['min']">El cantidad minima debe ser 0.</div>
         </div>
     
         <ion-button mode="ios" class="ion-margin" type="submit" [disabled]="form.invalid">

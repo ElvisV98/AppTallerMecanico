@@ -2,7 +2,7 @@
 </app-header>
 
 <ion-content>
-  <div class="d-flex-center">
+  <div class="d-flex-center middle-auth-form">
     <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
 
       <app-custom-input 
@@ -12,6 +12,11 @@
         type="text"
         [control]="form.controls.name">
       </app-custom-input>
+      
+      <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.touched">
+        <div *ngIf="form.controls.name.errors?.['required']">El nombre es requerido</div>
+        <div *ngIf="form.controls.name.errors?.['minlength']">debe tener 6 caracter como minimo</div>
+      </div>
 
       <app-custom-input
         icon="mail-outline"
@@ -21,6 +26,11 @@
         [control]="form.controls.email">
       </app-custom-input>
 
+      <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+        <div *ngIf="form.controls.email.errors?.['required']">El email es requerido</div>
+        <div *ngIf="form.controls.email.errors?.['email']">Debe ingresar un email valido</div>
+      </div>
+
       <app-custom-input
         label="Contraseña"
         placeholder="Ingrese su contraseña..."
@@ -28,6 +38,24 @@
         icon="lock-closed-outline"
         [control]="form.controls.password">
       </app-custom-input>
+
+      <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+        <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
+        <div *ngIf="form.controls.password.errors?.['minlength']">Debe tener 6 caracter como minimo</div>
+      </div>
+
+      <app-custom-input
+        label="Confirmar contraseña"
+        placeholder="Ingrese su contraseña..."
+        type="password"
+        icon="lock-closed-outline"
+        [control]="form.controls.confirmPassword">
+      </app-custom-input>
+
+      <div class="validators" *ngIf="form.controls.confirmPassword.errors && form.controls.confirmPassword.touched">
+        <div *ngIf="form.controls.confirmPassword.errors?.['required']">La contraseña es requerida</div>
+        <div *ngIf="form.controls.confirmPassword.errors?.['minlength']">Debe tener 6 caracter como minimo</div>
+      </div>
 
       <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
         Registrate

@@ -3,18 +3,18 @@
 
     <ion-buttons slot="start">
       <ion-back-button *ngIf="backButton" [defaultHref]="backButton"></ion-back-button>
-    </ion-buttons>
-
-    <ion-title class="custom-ion-title">
-      <strong>{{title}}</strong>
-      <div class="subtitle">{{subtitle}}</div>
-    </ion-title>
-
-    <ion-buttons slot="end">
       <ion-button (click)="dismissModal()" *ngIf="isModal">
         <ion-icon name="close-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
+    <ion-title>
+      <strong>{{title}}</strong>
+      <div class="subtitle">{{subtitle}}</div>
+    </ion-title>
+
+    <div slot="end" class="cont-logo">
+      <img src="../../../../assets/img/logo-vertical-musu-performance-blanco.png" class="logo" alt="logo">
+    </div>
   </ion-toolbar>
 </ion-header>

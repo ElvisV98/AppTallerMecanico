@@ -25,6 +25,10 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+ion-content {
+    --background: #f4f5f8;
+}
+
 ion-button {
     text-transform: none;
 }
@@ -53,6 +57,16 @@ ion-button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.middle-auth-form {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    border-radius: 15px;
 }
 
 
@@ -87,38 +101,144 @@ ion-button {
     padding: 20px;
 }
 
-.product-item {
-    --padding-top: 20px;
+/*TODO: FORMAS GEOMETRICAS */
+.circle {
+    width: 100%;
+    height: calc(width);
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
 
-    ion-avatar {
-        width: 70px;
-        height: 80px;
-        --border-radius: 15px;
-    }
 
-    .name {
-        font-weight: 600;
-        padding-bottom: 5px;
-    }
+/*TODO: FORMATO LISTA PRODUCTO*/
+.product-list {
+    padding: 1rem;
 
-    .data {
-        font-size: 13px;
+    .product-item {
+        border-radius: 20px;
+        margin-top: 20px;
+        
+        ion-item {
+            --background-hover: white;
 
-        strong {
-            font-weight: 500;
+        }
+    
+        ion-avatar {
+            width: 70px;
+            height: 80px;
+            margin: 0 24px 0 24px;
+            --border-radius: 15px;
+        }
+
+        .brand {
+            font-size: 0.7rem;
+            font-weight: bold;
+            --color: #C6302C;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            color: #000000;
+            max-width: 95%;
+            white-space: wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .description {
+            margin: 0.5rem 0 0.7rem;
+            font-size: 0.8rem;
+            max-width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: initial;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .metadata-top-end-wrapper {
+            position: absolute;
+            top: 10px;
+            inset-inline-end: 10px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin-right: 5%;
+            padding: 0.3rem;
+        }
+
+        .metadata-top-end-wrapper ion-icon {
+            padding-right: 5px;
+        }
+
+        .metadata-bottom-end-wrapper {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            bottom: 10px;
+            inset-inline-end: 10px;
+            font-size: 0.8rem;
+            margin-right: 5%;
+            padding: 0.3rem;
+        }
+    
+        .option-btn {
+            font-size: 27px;
         }
     }
+}
 
-    .option-btn {
-        font-size: 27px;
+/* CONTROL CANTIDAD DE PRODUCTO*/
+.control-cantidad {
+    background-color: #D1D2D4;
+    border-radius: 15px;
+    width: 30%;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Añade esta línea */
+
+    ion-button {
+        --padding-top: none;
+        --padding-start: none;
+        --padding-end: none;
+        --padding-bottom: none;
+        --border-radius: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
-    ion-chip {
-        font-size: 14px;
-        border-radius: 10px;
-        margin-left: 0;
+    ion-icon {
+        font-size: 1rem;
+        color: black;
+    }
+    
+    .circle-cantidad {
+        background-color: #FAF7F7;
+        border-radius: 50%;
+        height: 30px; /* Ajusta la altura según sea necesario */
+        width: 30px; /* Ajusta el ancho según sea necesario */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;   
+    }
+
+    ion-note {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
+
 
 @media (min-width: 769px) {
     .auth-form {
